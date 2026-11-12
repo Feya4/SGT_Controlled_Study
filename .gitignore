@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.zip
+data/
+*.bin
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.svs
+*.tif
+*.tiff
+*.jpg
+*.png
+!SGT/core/data/target.png

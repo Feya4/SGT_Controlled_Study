@@ -1,0 +1,351 @@
+{
+  "archive_sources": [
+    {
+      "name": "base",
+      "original_file": "CGT_sgt2.zip",
+      "sha256": "e045af2f806f59768c4f0619b32c6925bb956298bd472641d432687231284b52"
+    },
+    {
+      "name": "bracs_update",
+      "original_file": "sgt2_update_3class (1)(1).zip",
+      "sha256": "9d6afdd48a26be98faf29511974d7e7a8bfd46b510af53617dd8534261a50aba"
+    },
+    {
+      "name": "bach_update",
+      "original_file": "sgt2_update_bach (1)(1).zip",
+      "sha256": "7b528371b7053312cc5300dcea6438e0c894c9e08e77f7d61964973c6950242f"
+    },
+    {
+      "name": "isic_update",
+      "original_file": "sgt2_update_isic.zip",
+      "sha256": "30e94e6ff5aa3411571153cee5419ea43d6e86d882c7eb674fda87c103c7aa4b"
+    },
+    {
+      "name": "camelyon_update",
+      "original_file": "SGT_CAMELYON16_reproducibility.zip",
+      "sha256": "787eebd05fe7264addfdbe10aec7ea4855a995f362cb708c7f2730b5e707b9f1"
+    }
+  ],
+  "overlays_in_order": [
+    {
+      "source": "base",
+      "file": ".gitignore",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "LICENSE",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "README.md",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "RERUN.md",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/__init__.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/algos.pyx",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/build_tg.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/build_weights.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/collator.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/compare_runs.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/config/bracs_grapher_7_classes_pna.yml",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/convert_hact_graphs.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/dataloader.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/grapher.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/inference.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/predict_runs.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/summarize_cgt_runs.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/train.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/train_utils.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "core/wrapper.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "environment.yml",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "figs/overview.png",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "run_cgt.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "base",
+      "file": "run_cgt_bracs.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bracs_update",
+      "file": "RERUN.md",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bracs_update",
+      "file": "core/compare_runs.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bracs_update",
+      "file": "core/predict_runs.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bracs_update",
+      "file": "core/train.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bracs_update",
+      "file": "run_cgt_bracs.sh",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bracs_update",
+      "file": "tools/start_ft_when_free.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bach_update",
+      "file": "RERUN.md",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bach_update",
+      "file": "run_cgt_bracs.sh",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bach_update",
+      "file": "tools/sgt_perclass.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bach_update",
+      "file": "tools/sgt_progress.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bach_update",
+      "file": "tools/sgt_best.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bach_update",
+      "file": "tools/run_bach.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bach_update",
+      "file": "INSTALL.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bach_update",
+      "file": "core/predict_runs.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bach_update",
+      "file": "core/summarize_cgt_runs.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bach_update",
+      "file": "core/make_bach_folds.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bach_update",
+      "file": "core/bach_patients.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bach_update",
+      "file": "core/build_tg_bach.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "bach_update",
+      "file": "core/compare_runs.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "bach_update",
+      "file": "core/train.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "isic_update",
+      "file": "RERUN_ISIC.md",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "isic_update",
+      "file": "run_cgt_bracs.sh",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "isic_update",
+      "file": "tools/run_isic.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "isic_update",
+      "file": "INSTALL.sh",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "isic_update",
+      "file": "core/predict_runs.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "isic_update",
+      "file": "core/compare_runs.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "isic_update",
+      "file": "core/make_isic_split.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "isic_update",
+      "file": "core/build_tg_isic.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "isic_update",
+      "file": "core/train.py",
+      "overwrote_prior_different_file": true
+    },
+    {
+      "source": "camelyon_update",
+      "file": "patch_camelyon.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "camelyon_update",
+      "file": "core/build_tg_camelyon.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "camelyon_update",
+      "file": "core/make_camelyon_split.py",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "camelyon_update",
+      "file": "tools/camelyon_pipeline.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "camelyon_update",
+      "file": "tools/run_camelyon.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "camelyon_update",
+      "file": "tools/cam_train_now.sh",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "camelyon_update",
+      "file": "camelyon_final.txt",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "camelyon_update",
+      "file": "cam_calibration.txt",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "camelyon_update",
+      "file": "camelyon_pipeline.log",
+      "overwrote_prior_different_file": false
+    },
+    {
+      "source": "camelyon_update",
+      "file": "cam_graphs.log",
+      "overwrote_prior_different_file": false
+    }
+  ],
+  "omitted_from_package": [
+    "base pretrained checkpoint core/logs/model_best_val.pt (33.8 MB)",
+    "base core/data/target.png (13.3 MB)",
+    "embedded duplicate BACH zip"
+  ]
+}
