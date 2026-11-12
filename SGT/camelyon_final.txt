@@ -1,0 +1,196 @@
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed0/logs/28973607-a379-44c1-90a3-4d37cbc217f5/test_predictions.csv  seed=0 | test wF1 0.6028 mF1 0.6029 acc 0.6035
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed0/logs/28973607-a379-44c1-90a3-4d37cbc217f5/test_predictions_testrule.csv  seed=0 | test wF1 0.6197 mF1 0.6196 acc 0.6204
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed0/logs/28973607-a379-44c1-90a3-4d37cbc217f5/val_predictions.csv  seed=0 | val wF1 0.6647 mF1 0.6197 acc 0.6595
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed1/logs/2d6755f4-1eaf-4dda-8d9a-b2eed5e1176e/test_predictions.csv  seed=1 | test wF1 0.5909 mF1 0.5910 acc 0.5919
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed1/logs/2d6755f4-1eaf-4dda-8d9a-b2eed5e1176e/test_predictions_testrule.csv  seed=1 | test wF1 0.6239 mF1 0.6238 acc 0.6239
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed1/logs/2d6755f4-1eaf-4dda-8d9a-b2eed5e1176e/val_predictions.csv  seed=1 | val wF1 0.6603 mF1 0.6133 acc 0.6562
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed2/logs/261cc19d-7657-4355-b2fe-76b17d32354a/test_predictions.csv  seed=2 | test wF1 0.5803 mF1 0.5806 acc 0.5857
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed2/logs/261cc19d-7657-4355-b2fe-76b17d32354a/test_predictions_testrule.csv  seed=2 | test wF1 0.6218 mF1 0.6215 acc 0.6253
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed2/logs/261cc19d-7657-4355-b2fe-76b17d32354a/val_predictions.csv  seed=2 | val wF1 0.6650 mF1 0.6115 acc 0.6667
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed3/logs/ce393665-e429-44c3-88ed-2b5f83186967/test_predictions.csv  seed=3 | test wF1 0.6004 mF1 0.6004 acc 0.6004
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed3/logs/ce393665-e429-44c3-88ed-2b5f83186967/test_predictions_testrule.csv  seed=3 | test wF1 0.6172 mF1 0.6172 acc 0.6173
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed3/logs/ce393665-e429-44c3-88ed-2b5f83186967/val_predictions.csv  seed=3 | val wF1 0.6560 mF1 0.6155 acc 0.6474
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed4/logs/1c992540-d81f-407d-bfda-b3dca7f45f12/test_predictions.csv  seed=4 | test wF1 0.5616 mF1 0.5619 acc 0.5648
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed4/logs/1c992540-d81f-407d-bfda-b3dca7f45f12/test_predictions_testrule.csv  seed=4 | test wF1 0.6250 mF1 0.6249 acc 0.6253
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed4/logs/1c992540-d81f-407d-bfda-b3dca7f45f12/val_predictions.csv  seed=4 | val wF1 0.6531 mF1 0.5999 acc 0.6529
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed0/logs/8d3b44ca-3f8d-4d83-8e1d-7579936ee67d/test_predictions.csv  seed=0 | test wF1 0.5923 mF1 0.5926 acc 0.5946
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed0/logs/8d3b44ca-3f8d-4d83-8e1d-7579936ee67d/test_predictions_testrule.csv  seed=0 | test wF1 0.6189 mF1 0.6189 acc 0.6190
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed0/logs/8d3b44ca-3f8d-4d83-8e1d-7579936ee67d/val_predictions.csv  seed=0 | val wF1 0.6683 mF1 0.6179 acc 0.6678
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed1/logs/d049cd8e-f2c3-49d0-9697-b4f6506de0e1/test_predictions.csv  seed=1 | test wF1 0.5606 mF1 0.5610 acc 0.5665
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed1/logs/d049cd8e-f2c3-49d0-9697-b4f6506de0e1/test_predictions_testrule.csv  seed=1 | test wF1 0.6109 mF1 0.6107 acc 0.6124
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed1/logs/d049cd8e-f2c3-49d0-9697-b4f6506de0e1/val_predictions.csv  seed=1 | val wF1 0.6616 mF1 0.6063 acc 0.6645
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed2/logs/5bf1984f-5e28-43fb-a508-5b146334c8e4/test_predictions.csv  seed=2 | test wF1 0.5641 mF1 0.5644 acc 0.5688
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed2/logs/5bf1984f-5e28-43fb-a508-5b146334c8e4/test_predictions_testrule.csv  seed=2 | test wF1 0.6139 mF1 0.6140 acc 0.6146
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed2/logs/5bf1984f-5e28-43fb-a508-5b146334c8e4/val_predictions.csv  seed=2 | val wF1 0.6610 mF1 0.6107 acc 0.6595
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed3/logs/16921624-7259-4aba-a4f8-4b9168a44794/test_predictions.csv  seed=3 | test wF1 0.5613 mF1 0.5618 acc 0.5732
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed3/logs/16921624-7259-4aba-a4f8-4b9168a44794/test_predictions_testrule.csv  seed=3 | test wF1 0.6216 mF1 0.6215 acc 0.6222
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed3/logs/16921624-7259-4aba-a4f8-4b9168a44794/val_predictions.csv  seed=3 | val wF1 0.6621 mF1 0.6017 acc 0.6705
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed4/logs/d7dcbbbd-6dad-4e6f-9170-c6daa695748c/test_predictions.csv  seed=4 | test wF1 0.5918 mF1 0.5919 acc 0.5932
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed4/logs/d7dcbbbd-6dad-4e6f-9170-c6daa695748c/test_predictions_testrule.csv  seed=4 | test wF1 0.6251 mF1 0.6250 acc 0.6262
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed4/logs/d7dcbbbd-6dad-4e6f-9170-c6daa695748c/val_predictions.csv  seed=4 | val wF1 0.6702 mF1 0.6239 acc 0.6667
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed0/logs/d9a9aa7f-4a2b-412e-817b-3c3db5fbc382/test_predictions.csv  seed=0 | test wF1 0.5967 mF1 0.5969 acc 0.5990
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed0/logs/d9a9aa7f-4a2b-412e-817b-3c3db5fbc382/test_predictions_testrule.csv  seed=0 | test wF1 0.6159 mF1 0.6159 acc 0.6159
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed0/logs/d9a9aa7f-4a2b-412e-817b-3c3db5fbc382/val_predictions.csv  seed=0 | val wF1 0.6693 mF1 0.6203 acc 0.6678
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed1/logs/80d13360-baa3-4053-8346-c763a9915367/test_predictions.csv  seed=1 | test wF1 0.5946 mF1 0.5948 acc 0.5977
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed1/logs/80d13360-baa3-4053-8346-c763a9915367/test_predictions_testrule.csv  seed=1 | test wF1 0.6278 mF1 0.6275 acc 0.6324
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed1/logs/80d13360-baa3-4053-8346-c763a9915367/val_predictions.csv  seed=1 | val wF1 0.6551 mF1 0.6040 acc 0.6535
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed2/logs/0ed111ce-44e7-4d78-8eb3-baaef279534f/test_predictions.csv  seed=2 | test wF1 0.5886 mF1 0.5888 acc 0.5915
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed2/logs/0ed111ce-44e7-4d78-8eb3-baaef279534f/test_predictions_testrule.csv  seed=2 | test wF1 0.6234 mF1 0.6233 acc 0.6239
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed2/logs/0ed111ce-44e7-4d78-8eb3-baaef279534f/val_predictions.csv  seed=2 | val wF1 0.6628 mF1 0.6109 acc 0.6628
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed3/logs/fad9a313-f999-48ec-abc9-c5e48cec4378/test_predictions.csv  seed=3 | test wF1 0.5995 mF1 0.5997 acc 0.6008
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed3/logs/fad9a313-f999-48ec-abc9-c5e48cec4378/test_predictions_testrule.csv  seed=3 | test wF1 0.6184 mF1 0.6182 acc 0.6190
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed3/logs/fad9a313-f999-48ec-abc9-c5e48cec4378/val_predictions.csv  seed=3 | val wF1 0.6554 mF1 0.6061 acc 0.6524
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed4/logs/2b85317b-211d-4ffe-bc95-8e472a5a8955/test_predictions.csv  seed=4 | test wF1 0.5915 mF1 0.5917 acc 0.5932
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed4/logs/2b85317b-211d-4ffe-bc95-8e472a5a8955/test_predictions_testrule.csv  seed=4 | test wF1 0.6134 mF1 0.6131 acc 0.6190
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed4/logs/2b85317b-211d-4ffe-bc95-8e472a5a8955/val_predictions.csv  seed=4 | val wF1 0.6511 mF1 0.6034 acc 0.6463
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed0/logs/a0fd27a9-7218-4a09-bd7b-d9d41b8da32a/test_predictions.csv  seed=0 | test wF1 0.5932 mF1 0.5935 acc 0.5986
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed0/logs/a0fd27a9-7218-4a09-bd7b-d9d41b8da32a/test_predictions_testrule.csv  seed=0 | test wF1 0.6345 mF1 0.6344 acc 0.6346
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed0/logs/a0fd27a9-7218-4a09-bd7b-d9d41b8da32a/val_predictions.csv  seed=0 | val wF1 0.6677 mF1 0.6152 acc 0.6689
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed1/logs/4cb1b61e-567a-4e9f-afd1-509a5a30039d/test_predictions.csv  seed=1 | test wF1 0.5923 mF1 0.5927 acc 0.5972
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed1/logs/4cb1b61e-567a-4e9f-afd1-509a5a30039d/test_predictions_testrule.csv  seed=1 | test wF1 0.6257 mF1 0.6257 acc 0.6257
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed1/logs/4cb1b61e-567a-4e9f-afd1-509a5a30039d/val_predictions.csv  seed=1 | val wF1 0.6633 mF1 0.6114 acc 0.6634
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed2/logs/091211dc-d77f-48c0-821b-ac6ae0976625/test_predictions.csv  seed=2 | test wF1 0.5779 mF1 0.5783 acc 0.5852
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed2/logs/091211dc-d77f-48c0-821b-ac6ae0976625/test_predictions_testrule.csv  seed=2 | test wF1 0.6256 mF1 0.6253 acc 0.6302
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed2/logs/091211dc-d77f-48c0-821b-ac6ae0976625/val_predictions.csv  seed=2 | val wF1 0.6726 mF1 0.6175 acc 0.6771
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed3/logs/6460c14e-fc73-499d-ad44-4a7ef0a4fd3d/test_predictions.csv  seed=3 | test wF1 0.5715 mF1 0.5720 acc 0.5821
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed3/logs/6460c14e-fc73-499d-ad44-4a7ef0a4fd3d/test_predictions_testrule.csv  seed=3 | test wF1 0.6225 mF1 0.6226 acc 0.6226
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed3/logs/6460c14e-fc73-499d-ad44-4a7ef0a4fd3d/val_predictions.csv  seed=3 | val wF1 0.6597 mF1 0.5977 acc 0.6694
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed4/logs/a528d570-1d8d-47dc-9998-9b337fd5fd2a/test_predictions.csv  seed=4 | test wF1 0.5764 mF1 0.5768 acc 0.5821
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed4/logs/a528d570-1d8d-47dc-9998-9b337fd5fd2a/test_predictions_testrule.csv  seed=4 | test wF1 0.6327 mF1 0.6326 acc 0.6333
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed4/logs/a528d570-1d8d-47dc-9998-9b337fd5fd2a/val_predictions.csv  seed=4 | val wF1 0.6649 mF1 0.6109 acc 0.6672
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed0/logs/ba72b0e8-8db1-48d8-be91-7d0f7666e011/test_predictions.csv  seed=0 | test wF1 0.5644 mF1 0.5647 acc 0.5688
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed0/logs/ba72b0e8-8db1-48d8-be91-7d0f7666e011/test_predictions_testrule.csv  seed=0 | test wF1 0.6202 mF1 0.6204 acc 0.6213
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed0/logs/ba72b0e8-8db1-48d8-be91-7d0f7666e011/val_predictions.csv  seed=0 | val wF1 0.6712 mF1 0.6171 acc 0.6744
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed1/logs/61a97b50-0025-4633-be55-450a4ad41342/test_predictions.csv  seed=1 | test wF1 0.5802 mF1 0.5804 acc 0.5821
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed1/logs/61a97b50-0025-4633-be55-450a4ad41342/test_predictions_testrule.csv  seed=1 | test wF1 0.6198 mF1 0.6194 acc 0.6257
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed1/logs/61a97b50-0025-4633-be55-450a4ad41342/val_predictions.csv  seed=1 | val wF1 0.6730 mF1 0.6236 acc 0.6722
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed2/logs/9b6a6f95-ad90-461f-ba2d-886bcadcd4b6/test_predictions.csv  seed=2 | test wF1 0.5863 mF1 0.5866 acc 0.5888
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed2/logs/9b6a6f95-ad90-461f-ba2d-886bcadcd4b6/test_predictions_testrule.csv  seed=2 | test wF1 0.6167 mF1 0.6166 acc 0.6173
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed2/logs/9b6a6f95-ad90-461f-ba2d-886bcadcd4b6/val_predictions.csv  seed=2 | val wF1 0.6634 mF1 0.6135 acc 0.6617
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed3/logs/d5f0c67b-a4d7-474f-95c7-0cba84289fa8/test_predictions.csv  seed=3 | test wF1 0.5773 mF1 0.5777 acc 0.5857
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed3/logs/d5f0c67b-a4d7-474f-95c7-0cba84289fa8/test_predictions_testrule.csv  seed=3 | test wF1 0.6264 mF1 0.6263 acc 0.6275
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed3/logs/d5f0c67b-a4d7-474f-95c7-0cba84289fa8/val_predictions.csv  seed=3 | val wF1 0.6718 mF1 0.6151 acc 0.6776
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed4/logs/ff202346-d96c-43b5-920b-970a632ad650/test_predictions.csv  seed=4 | test wF1 0.5638 mF1 0.5643 acc 0.5759
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed4/logs/ff202346-d96c-43b5-920b-970a632ad650/test_predictions_testrule.csv  seed=4 | test wF1 0.6182 mF1 0.6182 acc 0.6182
+/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed4/logs/ff202346-d96c-43b5-920b-970a632ad650/val_predictions.csv  seed=4 | val wF1 0.6642 mF1 0.6021 acc 0.6749
+##### SGT - sgtconcat (Delta = SGT - control; from the saved predictions)
+checkpoint rule: best validation weighted F1, test evaluated once
+scores computed from test_predictions.csv of each run
+sgtconcat = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_cam_e100_val_seed*']
+SGT = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | sgtconcat test wF1 sgtconcat test mF1 sgtconcat test acc |       SGT test wF1       SGT test mF1       SGT test acc
+    0 |              59.23              59.26              59.46 |              60.28              60.29              60.35
+    1 |              56.06              56.10              56.65 |              59.09              59.10              59.19
+    2 |              56.41              56.44              56.88 |              58.03              58.06              58.57
+    3 |              56.13              56.18              57.32 |              60.04              60.04              60.04
+    4 |              59.18              59.19              59.32 |              56.16              56.19              56.48
+ mean |              57.40              57.43              57.93 |              58.72              58.74              58.92
+   SD |               1.65               1.64               1.36 |               1.68               1.67               1.54
+
+seed-paired difference SGT - sgtconcat (percentage points), df = 4
+  test wF1 +1.32  95% CI [-2.00, +4.63]  t(4) = 1.10  p = 0.3320  d_z = 0.49  (4 of 5 seeds better)
+  test mF1 +1.30  95% CI [-1.99, +4.59]  t(4) = 1.10  p = 0.3337  d_z = 0.49  (4 of 5 seeds better)
+  test acc +1.00  95% CI [-1.82, +3.81]  t(4) = 0.98  p = 0.3816  d_z = 0.44  (4 of 5 seeds better)
+
+paired bootstrap over 2247 test graphs (10,000 resamples, same resample for all 10 runs)
+  wF1  +1.32  95% CI [+0.24, +2.43]  p = 0.0180
+  mF1  +1.30  95% CI [+0.23, +2.40]  p = 0.0184
+  acc  +1.00  95% CI [-0.06, +2.07]  p = 0.0662
+
+per-class F1 on test_predictions.csv (test set), mean +- SD over 5 seeds
+class      images |       sgtconcat |             SGT |    diff
+Normal       1132 |  53.13 +-  3.38 |  56.44 +-  3.26 |   +3.31
+Tumor        1115 |  61.74 +-  0.98 |  61.03 +-  1.23 |   -0.71
+##### SGT - sgtmshuf (Delta = SGT - control; from the saved predictions)
+checkpoint rule: best validation weighted F1, test evaluated once
+scores computed from test_predictions.csv of each run
+sgtmshuf = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_cam_e100_val_seed*']
+SGT = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | sgtmshuf test wF1 sgtmshuf test mF1 sgtmshuf test acc |      SGT test wF1      SGT test mF1      SGT test acc
+    0 |             59.67             59.69             59.90 |             60.28             60.29             60.35
+    1 |             59.46             59.48             59.77 |             59.09             59.10             59.19
+    2 |             58.86             58.88             59.15 |             58.03             58.06             58.57
+    3 |             59.95             59.97             60.08 |             60.04             60.04             60.04
+    4 |             59.15             59.17             59.32 |             56.16             56.19             56.48
+ mean |             59.42             59.44             59.64 |             58.72             58.74             58.92
+   SD |              0.43              0.43              0.39 |              1.68              1.67              1.54
+
+seed-paired difference SGT - sgtmshuf (percentage points), df = 4
+  test wF1 -0.70  95% CI [-2.42, +1.02]  t(4) = -1.13  p = 0.3222  d_z = -0.50  (2 of 5 seeds better)
+  test mF1 -0.70  95% CI [-2.41, +1.01]  t(4) = -1.14  p = 0.3170  d_z = -0.51  (2 of 5 seeds better)
+  test acc -0.72  95% CI [-2.29, +0.85]  t(4) = -1.28  p = 0.2710  d_z = -0.57  (1 of 5 seeds better)
+
+paired bootstrap over 2247 test graphs (10,000 resamples, same resample for all 10 runs)
+  wF1  -0.70  95% CI [-1.45, +0.05]  p = 0.0684
+  mF1  -0.70  95% CI [-1.46, +0.05]  p = 0.0640
+  acc  -0.72  95% CI [-1.46, +0.02]  p = 0.0558
+
+per-class F1 on test_predictions.csv (test set), mean +- SD over 5 seeds
+class      images |        sgtmshuf |             SGT |    diff
+Normal       1132 |  56.60 +-  0.85 |  56.44 +-  3.26 |   -0.16
+Tumor        1115 |  62.28 +-  0.48 |  61.03 +-  1.23 |   -1.24
+##### SGT - sgtpshuf (Delta = SGT - control; from the saved predictions)
+checkpoint rule: best validation weighted F1, test evaluated once
+scores computed from test_predictions.csv of each run
+sgtpshuf = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_cam_e100_val_seed*']
+SGT = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | sgtpshuf test wF1 sgtpshuf test mF1 sgtpshuf test acc |      SGT test wF1      SGT test mF1      SGT test acc
+    0 |             59.32             59.35             59.86 |             60.28             60.29             60.35
+    1 |             59.23             59.27             59.72 |             59.09             59.10             59.19
+    2 |             57.79             57.83             58.52 |             58.03             58.06             58.57
+    3 |             57.15             57.20             58.21 |             60.04             60.04             60.04
+    4 |             57.64             57.68             58.21 |             56.16             56.19             56.48
+ mean |             58.23             58.27             58.91 |             58.72             58.74             58.92
+   SD |              0.99              0.98              0.82 |              1.68              1.67              1.54
+
+seed-paired difference SGT - sgtpshuf (percentage points), df = 4
+  test wF1 +0.49  95% CI [-1.50, +2.49]  t(4) = 0.69  p = 0.5308  d_z = 0.31  (3 of 5 seeds better)
+  test mF1 +0.47  95% CI [-1.50, +2.45]  t(4) = 0.66  p = 0.5441  d_z = 0.30  (3 of 5 seeds better)
+  test acc +0.02  95% CI [-1.61, +1.64]  t(4) = 0.03  p = 0.9772  d_z = 0.01  (3 of 5 seeds better)
+
+paired bootstrap over 2247 test graphs (10,000 resamples, same resample for all 10 runs)
+  wF1  +0.49  95% CI [-0.31, +1.29]  p = 0.2338
+  mF1  +0.47  95% CI [-0.29, +1.23]  p = 0.2352
+  acc  +0.02  95% CI [-0.77, +0.80]  p = 0.9730
+
+per-class F1 on test_predictions.csv (test set), mean +- SD over 5 seeds
+class      images |        sgtpshuf |             SGT |    diff
+Normal       1132 |  53.15 +-  1.80 |  56.44 +-  3.26 |   +3.29
+Tumor        1115 |  63.38 +-  0.59 |  61.03 +-  1.23 |   -2.35
+##### SGT - cgt (Delta = SGT - control; from the saved predictions)
+checkpoint rule: best validation weighted F1, test evaluated once
+scores computed from test_predictions.csv of each run
+cgt = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_cam_e100_val_seed*']
+SGT = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_cam_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | cgt test wF1 cgt test mF1 cgt test acc | SGT test wF1 SGT test mF1 SGT test acc
+    0 |        56.44        56.47        56.88 |        60.28        60.29        60.35
+    1 |        58.02        58.04        58.21 |        59.09        59.10        59.19
+    2 |        58.63        58.66        58.88 |        58.03        58.06        58.57
+    3 |        57.73        57.77        58.57 |        60.04        60.04        60.04
+    4 |        56.38        56.43        57.59 |        56.16        56.19        56.48
+ mean |        57.44        57.47        58.02 |        58.72        58.74        58.92
+   SD |         1.00         0.99         0.80 |         1.68         1.67         1.54
+
+seed-paired difference SGT - cgt (percentage points), df = 4
+  test wF1 +1.28  95% CI [-0.99, +3.55]  t(4) = 1.56  p = 0.1933  d_z = 0.70  (3 of 5 seeds better)
+  test mF1 +1.26  95% CI [-1.00, +3.52]  t(4) = 1.55  p = 0.1961  d_z = 0.69  (3 of 5 seeds better)
+  test acc +0.90  95% CI [-1.29, +3.09]  t(4) = 1.14  p = 0.3183  d_z = 0.51  (3 of 5 seeds better)
+
+paired bootstrap over 2247 test graphs (10,000 resamples, same resample for all 10 runs)
+  wF1  +1.28  95% CI [+0.26, +2.32]  p = 0.0152
+  mF1  +1.26  95% CI [+0.26, +2.29]  p = 0.0158
+  acc  +0.90  95% CI [-0.10, +1.91]  p = 0.0782
+
+per-class F1 on test_predictions.csv (test set), mean +- SD over 5 seeds
+class      images |             cgt |             SGT |    diff
+Normal       1132 |  52.92 +-  2.61 |  56.44 +-  3.26 |   +3.52
+Tumor        1115 |  62.03 +-  1.44 |  61.03 +-  1.23 |   -1.00
+===== done 11-12 07:01 =====
