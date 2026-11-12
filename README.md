@@ -1,6 +1,6 @@
 # Do Explicit Morphological and Spatial Encodings Help Graph Transformers in Breast Histopathology? A Controlled Study with SGT
 
-**Feidu Akmel · Xun Gong,* · Ashraf Osman Ibrahim · Gedamu Alemu · Abdalla Hadabi · Abdenacer Naouri**
+**Feidu Akmel · Xun Gong · Ashraf Osman Ibrahim · Gedamu Alemu · Abdalla Hadabi · Abdenacer Naouri**
 
 *Corresponding author: Xun Gong.*  
 
