@@ -154,7 +154,6 @@ The original SGT project is available at **https://github.com/Feya4/SGT**. Cite 
 
 ## Availability, licensing, and contact
 
-- **New controlled-study repository:** https://github.com/Feya4/SGT_Controlled_Study *(link becomes active when the repository is created)*.
 - **Original SGT repository:** https://github.com/Feya4/SGT.
 - **Reproducibility materials:** Source code, split manifests, run summaries, and representative checkpoints should be identified by versioned release assets or permanent archive links when published. Do not interpret unpopulated paths as already available downloads.
 - **License:** Refer to the actual `LICENSE` file in the published repository; source-code licenses do **not** automatically grant permission to redistribute medical images.
