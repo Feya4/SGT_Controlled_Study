@@ -12,9 +12,8 @@ This repository accompanies **“Do Explicit Morphological and Spatial Encodings
 
 The study examines the **Structural-Morphology-Aware Graph Transformer (SGT)**, combining a morphology-aware structural encoding (**MASE**) with a spatial relationship encoding (**SRE**). The central research question is *not* merely whether a more complex model achieves a higher score: it is whether any observed difference can be attributed to informative morphological and spatial encodings rather than added parameters, input dimensionality, or the training and evaluation procedure.
 
-Accordingly, experiments compare SGT with a graph-transformer baseline and three controls: a parameter-comparable feature-concatenation variant, a morphology-permutation control, and a spatial/structural-permutation control. These comparisons are designed to **test**, rather than presume, the value of explicit encoding. Small, inconsistent, or statistically inconclusive effects should be reported as such.
 
-> **Release scope:** The research-server experiment inventory comprises **200 primary model × seed × fold runs** across four datasets. The lightweight checkpoint package prepared for sharing contains **four representative validation-selected checkpoints (one per dataset)** and the **five recovered split files**. These representative weights are **not** a substitute for the complete 200-run evaluation or retraining all seeds and folds. The GitHub code staging archive and the research-server checkpoint package are separate artifacts; verify their contents before asserting that a file has been uploaded here.
+> **Release scope:** The research-server experiment inventory comprises **200 primary model × seed × fold runs** across four datasets. The lightweight checkpoint package prepared for sharing contains **four representative validation-selected checkpoints (one per dataset)** and the **five recovered split files**. These representative weights are **not** a substitute for the complete 200-run evaluation or retraining all seeds and folds. 
 
 ## Study design and controlled comparisons
 
