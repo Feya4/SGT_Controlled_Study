@@ -1,0 +1,6 @@
+split.csv: 12024 patches | Normal=4413 Tumor=7611
+superpixels: size 62 (BRACS 500), colour-merging threshold 0.025 (BRACS 0.05)
+stain normalisation: Vahadane to the BRACS target (as BRACS/BACH)
+CAMELYON graphs: 100%|██████████| 12024/12024 [1:30:13<00:00,  2.16it/s]CAMELYON graphs: 100%|██████████| 12024/12024 [1:30:13<00:00,  2.22it/s]
+12024 patches in this run, 12024 graphs written now, 12024 graphs in /workdir1.8t/fei27/CGT/GNNMD/cam_graphs/all, 0 failed
+nodes per graph: median 51, min 4, max 64 | seconds per patch: median 0.45 | pixels covered by regions: min 1.000, median 1.000
