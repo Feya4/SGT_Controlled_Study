@@ -28,7 +28,7 @@ c7d7cbdc2bce1fbbc2b5e7f6ac6fbef71dcf3f7e0effdb1cafdf8e3198b37930  ./SGT/core/bui
 f984903f6e9f66a4b45c3881e012f0350d1f51b2ff9a659a9293e3286f158139  ./SGT/core/compare_runs.py
 8c313b763405e4521541734d1fd87400ab46b02cbe78b99cb17feb20cf6e5261  ./SGT/core/config/bracs_grapher_7_classes_pna.yml
 7b70bee8fb517f805c795757e2879c907379dac39a1b4f02be69d08d91ac9c3c  ./SGT/core/convert_hact_graphs.py
-b364c6d0067c7f469654775ebe4adf433bd7283d71064cc0c44799c01c244664  ./SGT/core/dataloader.py
+48e96bc3ea5fa955994979636df5ba42a1f58b2a09a29853e4045364594a046f  ./SGT/core/dataloader.py
 e000c4b47bb879ebd95fb1beeedf30d0e580ad9e6d9a1a2fffb5049ac53bae33  ./SGT/core/data/README.md
 a3bc68fb68193983fb4415ba4131390dbec2d32c71a6794e48858bd08544f82f  ./SGT/core/grapher.py
 56e9aa9cae731b6eec728de3863404401017280f5c1c4d3d415641fd6a94801a  ./SGT/core/inference.py
@@ -37,6 +37,11 @@ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./SGT/core/__i
 06bdcda716d0dce1f04c020a1775631a8c7d7eec2ada17ff662a588964ccbafb  ./SGT/core/make_camelyon_split.py
 36d24f0e7b83b21a75976ead99c5ced7ed312dc7b210b37bf39067f74d9e99e0  ./SGT/core/make_isic_split.py
 72e4d0e3b2459e0bfc57c6fc3c62a16a537b7b5d536f7dc23e0ea6e9212b3601  ./SGT/core/predict_runs.py
+f07d9d6b089425d858b719b98f69f25aabd56c19b6ad6bf0f76c3b586452bc7c  ./SGT/core/__pycache__/collator.cpython-37.pyc
+31e4f0271de1f94ec65873b8d7cb7c9d73bc99b3fcca3bbc6653012eaf146c5e  ./SGT/core/__pycache__/dataloader.cpython-37.pyc
+be025d6d9ceecf46f9f428eeeef308a09912ac138a13b2094a37f3b61bed53c4  ./SGT/core/__pycache__/grapher.cpython-37.pyc
+9df415f55df7c22d64054129962a5c8629af76dabfc4a33d2688479e623c778e  ./SGT/core/__pycache__/train_utils.cpython-37.pyc
+c45f7d3de543d74505ea2f8aa5ee527cdab710be98630421998cd87445e26c2c  ./SGT/core/__pycache__/wrapper.cpython-37.pyc
 8fa267e37a1b175086aa469d66583e21ac5369598ca90ec2e27509162d3f458a  ./SGT/core/summarize_cgt_runs.py
 0c03ef82cf0daa47de64cb5e6cfacf9e169f2bc623ccaf900fab81025e971ec0  ./SGT/core/train.py
 151c98b19a6092d0caaa107207bab05be40e33d5a386cb379d26248f64055490  ./SGT/core/train_utils.py
