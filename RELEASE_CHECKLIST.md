@@ -1,16 +1,18 @@
-# Final release gate (do not claim completed until checked)
+# Pre-Zenodo release checklist (must be completed by project owner)
 
-- [ ] BRACS exact WSI+ROI split manifest and class counts confirmed
-- [ ] BACH 5 patient-grouped folds and patient IDs verified (record missing IDs explicitly)
-- [ ] ISIC 2018 lesion/near-duplicate grouping manifests confirmed
-- [ ] CAMELYON16 slide-group partition manifests confirmed
-- [ ] All 25 BRACS predictions + seed/run configuration files
-- [ ] All 125 BACH predictions + fold and seed identifiers
-- [ ] All 25 ISIC predictions and checkpoint-selection metadata
-- [ ] All 25 CAMELYON predictions and checkpoint-selection metadata
-- [ ] Selected best-validation model checkpoints inventoried (Zenodo for large weights)
-- [ ] Environment versions, pretrained encoder provenance and available data preparation instructions recorded
-- [ ] Parameter counts and all manuscript tables recomputed from archived predictions
-- [ ] Checkpoint selection uses validation, not best test epoch
-- [ ] No raw patient data, credentials, private server paths or copyrighted original image datasets committed
-- [ ] Archive SHA256 checksums; tag git release; archive exact release on Zenodo with DOI
+- [x] Recover five authentic split manifests for BRACS, BACH, ISIC 2018, CAMELYON16.
+- [x] Check split counts and no overlap for slide/lesion groups; BACH 400 unique fold assignments.
+- [x] Restore missing original CGT config YAML (from user-provided original CGT archive).
+- [x] Integrate `cam2` in training, prediction, comparisons and main launcher.
+- [x] Default to validation-only selection and block accidental test-selected training.
+- [x] Make main launchers relative to source root; remove obsolete placeholder files.
+- [x] Provide `tools/verify_release.py` static/metadata audit (not a GPU training test).
+- [ ] Acquire the original stain-normalization target locally with permission and verify its hash.
+- [ ] Confirm all environment dependencies install on a clean research machine; compile and import the Cython extension.
+- [ ] On the research server, verify graphs against frozen splits and run a smoke test for each dataset/variant.
+- [ ] Re-evaluate at least one representative validation-selected checkpoint per dataset and confirm recorded predictions.
+- [ ] Verify the 200 original run configurations/checkpoint provenance and aggregate source tables (or disclose any exceptions).
+- [ ] Upload original prediction CSVs/configurations/logs as permitted to the archival record.
+- [ ] Upload and checksum the four representative SGT weights (if permitted); confirm the archive download link.
+- [ ] Confirm licenses and redistribution rights for CGT-derived source, normalization target and data derivatives.
+- [ ] Freeze GitHub release and Zenodo version, then insert the actual DOI into the manuscript and response letter.

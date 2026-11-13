@@ -1,351 +1,356 @@
 {
-  "archive_sources": [
+  "release": "SGT_Controlled_Study corrected source package (pre-Zenodo)",
+  "scope": "source, frozen split manifests, archived historical result terminal output; no medical images, trained weights or full saved prediction inventory",
+  "files": [
     {
-      "name": "base",
-      "original_file": "CGT_sgt2.zip",
-      "sha256": "e045af2f806f59768c4f0619b32c6925bb956298bd472641d432687231284b52"
+      "path": ".gitignore",
+      "bytes": 216,
+      "sha256": "d9be3be601d14249a3455f06a76778b914f1558b90dcf9c383fe93c07855291e"
     },
     {
-      "name": "bracs_update",
-      "original_file": "sgt2_update_3class (1)(1).zip",
-      "sha256": "9d6afdd48a26be98faf29511974d7e7a8bfd46b510af53617dd8534261a50aba"
+      "path": "README.md",
+      "bytes": 9038,
+      "sha256": "214fa35f4c456229e6c0726835b98c5a2356884bc25c037169910c7bfa449bce"
     },
     {
-      "name": "bach_update",
-      "original_file": "sgt2_update_bach (1)(1).zip",
-      "sha256": "7b528371b7053312cc5300dcea6438e0c894c9e08e77f7d61964973c6950242f"
+      "path": "RELEASE_CHECKLIST.md",
+      "bytes": 1710,
+      "sha256": "1796b3782535d164d09e2945e3e2e8c8892d6947f1d8d44357996d2ce573347b"
     },
     {
-      "name": "isic_update",
-      "original_file": "sgt2_update_isic.zip",
-      "sha256": "30e94e6ff5aa3411571153cee5419ea43d6e86d882c7eb674fda87c103c7aa4b"
+      "path": "REPRODUCIBILITY.md",
+      "bytes": 8505,
+      "sha256": "3047945ee2990d9933cb6280dfb182be1e6e375b4cc5dd85113c77e3d8e689e8"
     },
     {
-      "name": "camelyon_update",
-      "original_file": "SGT_CAMELYON16_reproducibility.zip",
+      "path": "SGT/.gitignore",
+      "bytes": 60,
+      "sha256": "fdaf18bb1ae84187ff1f2e3aa727efe54540526bb190c4b82df718cf5e8a17fe"
+    },
+    {
+      "path": "SGT/INSTALL.sh",
+      "bytes": 393,
+      "sha256": "0e13565cba9192df080640cf7ed03d306ecc6e95d39a111da8b3ef67473768e2"
+    },
+    {
+      "path": "SGT/LICENSE",
+      "bytes": 1064,
+      "sha256": "8dea524586f5b3e3d863febfc3bfd7a6dc67e00dae9c0ef29e869f62dc4645af"
+    },
+    {
+      "path": "SGT/README.md",
+      "bytes": 749,
+      "sha256": "ae767a8df0cf4b0589f7ddcf2ce4e649c2d082cce4f7813ecf7f7876bef14d7e"
+    },
+    {
+      "path": "SGT/RERUN.md",
+      "bytes": 13058,
+      "sha256": "bc0ff09249f8bfbe2eb51e3cc41768823a868d050f66a3479aacfcc0cb22bd18"
+    },
+    {
+      "path": "SGT/RERUN_ISIC.md",
+      "bytes": 2342,
+      "sha256": "3c454b78c7cbcf9fbcda664fef2abe281acee41532d287bc289fe957a4aafe9e"
+    },
+    {
+      "path": "SGT/cam_calibration.txt",
+      "bytes": 2481,
+      "sha256": "8de8f14ae6ba506f0f3d95cf7da63c03459a8a7e7503a1212cb17e6533fd01cc"
+    },
+    {
+      "path": "SGT/cam_graphs.log",
+      "bytes": 632,
+      "sha256": "94228f896f3ca2c0ebb519bea82cea87cc5fffac59c2d4becf328901c7e7c1b9"
+    },
+    {
+      "path": "SGT/camelyon_final.txt",
+      "bytes": 22293,
+      "sha256": "40e540dcd728580c0f25b8dd603152006ae0dd6bb4689910850bdaac038c658a"
+    },
+    {
+      "path": "SGT/camelyon_pipeline.log",
+      "bytes": 13910,
+      "sha256": "9d58554849519e60239498ca3752232a91f76e1a119600ee9cc49e0cdd64eedb"
+    },
+    {
+      "path": "SGT/core/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "SGT/core/algos.pyx",
+      "bytes": 2595,
+      "sha256": "02e0c8b6c8ca990cdb355adcb48a9e596945c107d0f3fd22ce7e98b1c179a1e3"
+    },
+    {
+      "path": "SGT/core/bach_patients.py",
+      "bytes": 9817,
+      "sha256": "c595ba903c41ec35e829dbf3936fc75cf4c7212435a902a1c99dd5ad9d6ae8e2"
+    },
+    {
+      "path": "SGT/core/build_tg.py",
+      "bytes": 6329,
+      "sha256": "9271231358ec5cd253cdb16bcb316fa321fda5e3b4849d1b3b990b8f5e00ad63"
+    },
+    {
+      "path": "SGT/core/build_tg_bach.py",
+      "bytes": 5288,
+      "sha256": "7a8e00eb7e11f335723bad10d176c203fe45b4af68a06bff3ca01418df8b369d"
+    },
+    {
+      "path": "SGT/core/build_tg_camelyon.py",
+      "bytes": 8752,
+      "sha256": "a3cef531e88b214b51c8e2ae58520710fb8db9a5a4ee01b3fefd52170cbda52e"
+    },
+    {
+      "path": "SGT/core/build_tg_isic.py",
+      "bytes": 7032,
+      "sha256": "ced9aa31a75eb0815e463b181f9a2c9a0f96c36a0ce14d5d2d147682a4fef39a"
+    },
+    {
+      "path": "SGT/core/build_weights.py",
+      "bytes": 3774,
+      "sha256": "c7d7cbdc2bce1fbbc2b5e7f6ac6fbef71dcf3f7e0effdb1cafdf8e3198b37930"
+    },
+    {
+      "path": "SGT/core/collator.py",
+      "bytes": 6995,
+      "sha256": "74d5c39462c985ec1998554197f9341fe020d3637645638e159761309fe7fa00"
+    },
+    {
+      "path": "SGT/core/compare_runs.py",
+      "bytes": 16729,
+      "sha256": "f984903f6e9f66a4b45c3881e012f0350d1f51b2ff9a659a9293e3286f158139"
+    },
+    {
+      "path": "SGT/core/config/bracs_grapher_7_classes_pna.yml",
+      "bytes": 412,
+      "sha256": "8c313b763405e4521541734d1fd87400ab46b02cbe78b99cb17feb20cf6e5261"
+    },
+    {
+      "path": "SGT/core/convert_hact_graphs.py",
+      "bytes": 6594,
+      "sha256": "7b70bee8fb517f805c795757e2879c907379dac39a1b4f02be69d08d91ac9c3c"
+    },
+    {
+      "path": "SGT/core/data/README.md",
+      "bytes": 679,
+      "sha256": "e000c4b47bb879ebd95fb1beeedf30d0e580ad9e6d9a1a2fffb5049ac53bae33"
+    },
+    {
+      "path": "SGT/core/dataloader.py",
+      "bytes": 8748,
+      "sha256": "b364c6d0067c7f469654775ebe4adf433bd7283d71064cc0c44799c01c244664"
+    },
+    {
+      "path": "SGT/core/grapher.py",
+      "bytes": 16841,
+      "sha256": "a3bc68fb68193983fb4415ba4131390dbec2d32c71a6794e48858bd08544f82f"
+    },
+    {
+      "path": "SGT/core/inference.py",
+      "bytes": 6179,
+      "sha256": "56e9aa9cae731b6eec728de3863404401017280f5c1c4d3d415641fd6a94801a"
+    },
+    {
+      "path": "SGT/core/make_bach_folds.py",
+      "bytes": 8072,
+      "sha256": "1669f12a6b1c245b853c04888e9f2eae0fdb99214f8689bbefc9f26d7f5aa432"
+    },
+    {
+      "path": "SGT/core/make_camelyon_split.py",
+      "bytes": 5797,
+      "sha256": "06bdcda716d0dce1f04c020a1775631a8c7d7eec2ada17ff662a588964ccbafb"
+    },
+    {
+      "path": "SGT/core/make_isic_split.py",
+      "bytes": 5703,
+      "sha256": "36d24f0e7b83b21a75976ead99c5ced7ed312dc7b210b37bf39067f74d9e99e0"
+    },
+    {
+      "path": "SGT/core/predict_runs.py",
+      "bytes": 8279,
+      "sha256": "72e4d0e3b2459e0bfc57c6fc3c62a16a537b7b5d536f7dc23e0ea6e9212b3601"
+    },
+    {
+      "path": "SGT/core/summarize_cgt_runs.py",
+      "bytes": 3488,
+      "sha256": "8fa267e37a1b175086aa469d66583e21ac5369598ca90ec2e27509162d3f458a"
+    },
+    {
+      "path": "SGT/core/train.py",
+      "bytes": 28790,
+      "sha256": "0c03ef82cf0daa47de64cb5e6cfacf9e169f2bc623ccaf900fab81025e971ec0"
+    },
+    {
+      "path": "SGT/core/train_utils.py",
+      "bytes": 129,
+      "sha256": "151c98b19a6092d0caaa107207bab05be40e33d5a386cb379d26248f64055490"
+    },
+    {
+      "path": "SGT/core/wrapper.py",
+      "bytes": 3390,
+      "sha256": "0573af31a4071457218d70fd3fedc370be4beef44e52c00d1caea5a67aad9a09"
+    },
+    {
+      "path": "SGT/environment.yml",
+      "bytes": 858,
+      "sha256": "b11770eb2dcbeea617b51ce73614897103890056bf6a1df67ab1148d49f4a2a1"
+    },
+    {
+      "path": "SGT/patch_camelyon.py",
+      "bytes": 4596,
+      "sha256": "5ffee75348689f767cdd532972f07847e39c304f07eda6e4d8ba17dfa0e60424"
+    },
+    {
+      "path": "SGT/run_cgt.sh",
+      "bytes": 3315,
+      "sha256": "4b123da10ce092026c1ced329feff963aaa408a9e4bd1af2b91c5f68ac0a8a79"
+    },
+    {
+      "path": "SGT/run_cgt_bracs.sh",
+      "bytes": 19452,
+      "sha256": "3341de3012d3c1d68eed205e35a0cb392e696ac44bb2144d41c154a1473411a1"
+    },
+    {
+      "path": "VALIDATION.txt",
+      "bytes": 346,
+      "sha256": "90b51436772b5434bf1d987ddc781aab9e2cf8ff2fb9967366ecca6ce7864b29"
+    },
+    {
+      "path": "checkpoints/README.md",
+      "bytes": 942,
+      "sha256": "2c4a38e8336c449c3a77683456d1cd7ee8c9f201ae603d2de022b09aed4a368a"
+    },
+    {
+      "path": "results/BACH/README.md",
+      "bytes": 290,
+      "sha256": "7c0e62f81185cc02dca90247120b34aa77e805d1a4da18d0386a7d6658bdcf58"
+    },
+    {
+      "path": "results/BACH/comparison_terminal_output.txt",
+      "bytes": 14054,
+      "sha256": "347b0e1fe7960bbb378302ce1c6f511b91487c0fa05d2fa745d9c108cfe3e67b"
+    },
+    {
+      "path": "results/BRACS/README.md",
+      "bytes": 291,
+      "sha256": "f95f9fb56a8831f4c11a75ffd3f471a2a4769d88e12bcfb231e080bd33df771a"
+    },
+    {
+      "path": "results/BRACS_CAMELYON16/comparison_terminal_output.txt",
+      "bytes": 65635,
+      "sha256": "feaf639894e47eabe57f97bf7baa2a1dad22e15781b4519423195235ebb3d867"
+    },
+    {
+      "path": "results/CAMELYON16/README.md",
+      "bytes": 296,
+      "sha256": "a8dd2d6396c4624ba0c66508f3bb808949e0977da40e813399239bb95b9f0b48"
+    },
+    {
+      "path": "results/ISIC2018/README.md",
+      "bytes": 294,
+      "sha256": "d856989b99e632b493fd6f07d497772f8b245b9ae130e928d31db0801ad24728"
+    },
+    {
+      "path": "results/ISIC2018/comparison_terminal_output.txt",
+      "bytes": 10640,
+      "sha256": "68bb4fc39c5930151bcad64649ec0fd40bf8efc80d3a4dd806384f95b12f6c5b"
+    },
+    {
+      "path": "results/README.md",
+      "bytes": 625,
+      "sha256": "fb5362b54a1759a8d4b3b38cd29ade3540c01bfabf5fd82105fcaf00a2c18eee"
+    },
+    {
+      "path": "run_study.sh",
+      "bytes": 329,
+      "sha256": "b968bf58c7a1f12e3b7a0ff7820ad7dde1b873dfc953f68d4fc409081fe817b8"
+    },
+    {
+      "path": "source_versions/SGT_CAMELYON16_scripts_and_logs.zip",
+      "bytes": 21096,
       "sha256": "787eebd05fe7264addfdbe10aec7ea4855a995f362cb708c7f2730b5e707b9f1"
+    },
+    {
+      "path": "source_versions/source_versions.zip",
+      "bytes": 404340,
+      "sha256": "4ea933279bd3f4a97891c0da3618cbce79e6ba7faf34ba583c2c63793eb08d85"
+    },
+    {
+      "path": "splits/BACH/folds.json",
+      "bytes": 5002,
+      "sha256": "2060060ba4dd406631c5a036aa2a60e6b612a4e0478a9607faaabf8cf1c2e711"
+    },
+    {
+      "path": "splits/BACH/folds_info.json",
+      "bytes": 262,
+      "sha256": "fda6c42db5a38d7cbb963dec1acb1feec08623b5b3126f5235d414ec34357fcb"
+    },
+    {
+      "path": "splits/BRACS/bracs_split.csv",
+      "bytes": 165572,
+      "sha256": "83bdc0fbb0f99722d8430198ac4ec2d772fc057c747b612b624836af977d0f6a"
+    },
+    {
+      "path": "splits/CAMELYON16/split.csv",
+      "bytes": 770625,
+      "sha256": "4f9cff132a33702a75eaf747363bcaf0bdb494a1269d5b164fa66a8bcdb599b4"
+    },
+    {
+      "path": "splits/ISIC2018/isic2018_lesion_split.csv",
+      "bytes": 480315,
+      "sha256": "c5fbc401f7eff2d66a8dda3b0d8e9d2a13b42f131b8eaf5396e9c46c50b5446f"
+    },
+    {
+      "path": "tools/cam_train_now.sh",
+      "bytes": 425,
+      "sha256": "5cd4842625383352753f371cf6088df3f0dacf5b66b6f860e75f634cbf975a29"
+    },
+    {
+      "path": "tools/camelyon_pipeline.sh",
+      "bytes": 938,
+      "sha256": "7b6fcbd0641980c35daea7adc7cf880fafe671d05d0e200b71615e883e9e4ab0"
+    },
+    {
+      "path": "tools/run_bach.sh",
+      "bytes": 2922,
+      "sha256": "7ce412678041664cad07a0d8c083802a67d0d7dcbbbd110ff649231fa8f0067e"
+    },
+    {
+      "path": "tools/run_camelyon.sh",
+      "bytes": 2886,
+      "sha256": "b2185c9357068aeda5e39b39ffbf55976377ff9eeddcbe5e87d6444df0ad7099"
+    },
+    {
+      "path": "tools/run_isic.sh",
+      "bytes": 2884,
+      "sha256": "865ca43a61e71982c07d88927a9cd4ae290f7f5c17412e899e9a6c1e00a67ff6"
+    },
+    {
+      "path": "tools/sgt_best.sh",
+      "bytes": 2819,
+      "sha256": "aa6cb6656125c651cb84e6c47f9b03f93d434362be5499261e656f1d840457a3"
+    },
+    {
+      "path": "tools/sgt_perclass.py",
+      "bytes": 2346,
+      "sha256": "a5f1929acaaa7bf71070ba5dfa8aae3568b5903eaecc7981b247088447ff110b"
+    },
+    {
+      "path": "tools/sgt_progress.sh",
+      "bytes": 2671,
+      "sha256": "3ddcdfccdba2339e3f22c2fcadfd05f7d526318b36576e4faa08a3e735575d8c"
+    },
+    {
+      "path": "tools/start_ft_when_free.sh",
+      "bytes": 1694,
+      "sha256": "76002eec592583f2df748b7b35f10b34a9fa8a2a0c3ec07bf8d4f3cce2dd13e5"
+    },
+    {
+      "path": "tools/verify_release.py",
+      "bytes": 6691,
+      "sha256": "095487492044b7b65932d60b2d7904458a3c883960eba2251b2d00f3409d9466"
     }
-  ],
-  "overlays_in_order": [
-    {
-      "source": "base",
-      "file": ".gitignore",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "LICENSE",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "README.md",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "RERUN.md",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/__init__.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/algos.pyx",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/build_tg.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/build_weights.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/collator.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/compare_runs.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/config/bracs_grapher_7_classes_pna.yml",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/convert_hact_graphs.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/dataloader.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/grapher.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/inference.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/predict_runs.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/summarize_cgt_runs.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/train.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/train_utils.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "core/wrapper.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "environment.yml",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "figs/overview.png",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "run_cgt.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "base",
-      "file": "run_cgt_bracs.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bracs_update",
-      "file": "RERUN.md",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bracs_update",
-      "file": "core/compare_runs.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bracs_update",
-      "file": "core/predict_runs.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bracs_update",
-      "file": "core/train.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bracs_update",
-      "file": "run_cgt_bracs.sh",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bracs_update",
-      "file": "tools/start_ft_when_free.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bach_update",
-      "file": "RERUN.md",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bach_update",
-      "file": "run_cgt_bracs.sh",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bach_update",
-      "file": "tools/sgt_perclass.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bach_update",
-      "file": "tools/sgt_progress.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bach_update",
-      "file": "tools/sgt_best.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bach_update",
-      "file": "tools/run_bach.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bach_update",
-      "file": "INSTALL.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bach_update",
-      "file": "core/predict_runs.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bach_update",
-      "file": "core/summarize_cgt_runs.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bach_update",
-      "file": "core/make_bach_folds.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bach_update",
-      "file": "core/bach_patients.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bach_update",
-      "file": "core/build_tg_bach.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "bach_update",
-      "file": "core/compare_runs.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "bach_update",
-      "file": "core/train.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "isic_update",
-      "file": "RERUN_ISIC.md",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "isic_update",
-      "file": "run_cgt_bracs.sh",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "isic_update",
-      "file": "tools/run_isic.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "isic_update",
-      "file": "INSTALL.sh",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "isic_update",
-      "file": "core/predict_runs.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "isic_update",
-      "file": "core/compare_runs.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "isic_update",
-      "file": "core/make_isic_split.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "isic_update",
-      "file": "core/build_tg_isic.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "isic_update",
-      "file": "core/train.py",
-      "overwrote_prior_different_file": true
-    },
-    {
-      "source": "camelyon_update",
-      "file": "patch_camelyon.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "camelyon_update",
-      "file": "core/build_tg_camelyon.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "camelyon_update",
-      "file": "core/make_camelyon_split.py",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "camelyon_update",
-      "file": "tools/camelyon_pipeline.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "camelyon_update",
-      "file": "tools/run_camelyon.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "camelyon_update",
-      "file": "tools/cam_train_now.sh",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "camelyon_update",
-      "file": "camelyon_final.txt",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "camelyon_update",
-      "file": "cam_calibration.txt",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "camelyon_update",
-      "file": "camelyon_pipeline.log",
-      "overwrote_prior_different_file": false
-    },
-    {
-      "source": "camelyon_update",
-      "file": "cam_graphs.log",
-      "overwrote_prior_different_file": false
-    }
-  ],
-  "omitted_from_package": [
-    "base pretrained checkpoint core/logs/model_best_val.pt (33.8 MB)",
-    "base core/data/target.png (13.3 MB)",
-    "embedded duplicate BACH zip"
   ]
 }

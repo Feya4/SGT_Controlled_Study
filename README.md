@@ -1,163 +1,124 @@
 # Do Explicit Morphological and Spatial Encodings Help Graph Transformers in Breast Histopathology? A Controlled Study with SGT
 
-**Feidu Akmel · Xun Gong · Ashraf Osman Ibrahim · Gedamu Alemu · Abdalla Hadabi · Abdenacer Naouri**
+**Feidu Akmel¹˒², Xun Gong¹˒²*, Ashraf Osman Ibrahim³, Gedamu Alemu⁴, Abdalla Hadabi², Abdenacer Naouri²**  
+*Corresponding author: Xun Gong · xgong@swjtu.edu.cn*
 
-*Corresponding author: Xun Gong.*  
+¹ Yibin Research Institute, Southwest Jiaotong University, China  
+² School of Computing and Artificial Intelligence, Southwest Jiaotong University, China  
+³ Universiti Teknologi PETRONAS, Malaysia  
+⁴ Khalifa University of Science and Technology, United Arab Emirates
 
-[![Study](https://img.shields.io/badge/Study-Controlled%20Graph%20Transformer%20Evaluation-blue)](#study-overview) [![Datasets](https://img.shields.io/badge/Datasets-4-blue)](#datasets-and-evaluation-protocols) [![Reproducibility](https://img.shields.io/badge/Checkpoint%20selection-Validation%20weighted%20F1-green)](#checkpoint-selection-and-evaluation-integrity)
+## About this repository
 
-## Study overview
+This repository is the **controlled-study implementation** accompanying the manuscript listed above. It evaluates whether adding explicit tissue-region morphology (**MASE**) and graph-hop-distance relationships (**SRE**) to the connectivity-aware graph transformer (**CGT**) provides a measurable classification benefit under matched experimental protocols.
 
-This repository accompanies **“Do Explicit Morphological and Spatial Encodings Help Graph Transformers in Breast Histopathology? A Controlled Study with SGT.”** It documents the implementation, controlled comparisons, data-partition protocols, and reproducibility materials used to investigate whether explicit **morphological** and **spatial** representations improve graph-transformer-based histopathology classification beyond a comparable baseline.
+**Research interpretation:** On the BRACS three-class task the tested encodings yielded no demonstrated performance benefit relative to the controlled baselines. On BACH, the full SGT scored below CGT and the morphology-permutation control. These results are not presented as evidence of superiority for SGT.
 
-The study examines the **Structural-Morphology-Aware Graph Transformer (SGT)**, combining a morphology-aware structural encoding (**MASE**) with a spatial relationship encoding (**SRE**). The central research question is *not* merely whether a more complex model achieves a higher score: it is whether any observed difference can be attributed to informative morphological and spatial encodings rather than added parameters, input dimensionality, or the training and evaluation procedure.
+The public source release supports **BRACS, BACH, ISIC 2018, and CAMELYON16-derived Level-2 patch graphs**. Experimental graphs and raw medical images are **not** included; they must be obtained from their authorized sources or reconstructed under the stated preprocessing protocol. The current release contains **no actual `.pt` checkpoint weights or the 200 original saved prediction files**. The author prepared a separate four-model representative-checkpoint package on a research server, but it must be uploaded and verified before it can be cited as an available download.
 
+## Quick start — verify without installing ML dependencies
 
-> **Release scope:** The research-server experiment inventory comprises **200 primary model × seed × fold runs** across four datasets. The lightweight checkpoint package prepared for sharing contains **four representative validation-selected checkpoints (one per dataset)** and the **five recovered split files**. These representative weights are **not** a substitute for the complete 200-run evaluation or retraining all seeds and folds. 
+```bash
+git clone https://github.com/Feya4/SGT_Controlled_Study.git
+cd SGT_Controlled_Study
+python tools/verify_release.py
+```
 
-## Study design and controlled comparisons
+The stdlib-only audit checks manifest counts, slide/lesion grouping, CAMELYON16 magnification, BACH folds, Python source syntax, and presence of the CAMELYON16 training integration. It **does not** train models, test GPU compatibility, verify medical-image preprocessing outputs, or prove that numerical paper results have been reproduced. To recheck sample identifiers from the author's original run directories (when available):
 
-| Variant | Purpose | Controlled question |
+```bash
+python tools/verify_release.py --runs /path/to/original/CGT_sgt2
+```
+
+The audit checks test-prediction identifiers, not model weights, checkpoint epoch provenance, or training determinism.
+
+## Controlled model variants
+
+| Name | `MODEL` | Description |
 |---|---|---|
-| **Baseline (CGT)** | Graph-transformer reference without the additional SGT modules | How does the underlying graph-transformer formulation perform? |
-| **SGT (MASE + SRE)** | Full proposed model | Do explicit morphology and spatial encodings improve performance? |
-| **Concatenation control** | Incorporates morphological attributes through a parameter-comparable concatenation-based pathway | Is the effect attributable to the structured encoder or simply to extra input features / capacity? |
-| **Morphology-permuted control** | Disrupts the correspondence between morphological attributes and graph nodes | Does meaningful morphology–node alignment matter? |
-| **Spatial/structure-permuted control** | Disrupts the spatial/structural information supplied to the relationship encoder | Does meaningful spatial organization matter? |
+| Connectivity-aware graph transformer | `cgt` | Baseline without additional morphology/hop encodings |
+| Full SGT | `sgt` | CGT + MASE + SRE |
+| Parameter-matched concatenation | `sgt_concat` | Raw morphology through an alternative input path, SRE retained |
+| Randomized morphology | `sgt_mshuf` | Node-morphology correspondence permuted within each graph |
+| Randomized structure | `sgt_pshuf` | SRE-specific hop information randomized while the base connectivity remains intact |
 
-In the experimental code, names may appear as `cgt`, `sgtfull`, `sgtconcat`, `sgtmshuf`, and `sgtpshuf`. Refer to the dataset-specific launcher or run metadata for the exact configuration used in each reported comparison. **The perturbation controls are not interchangeable with removing the corresponding modules.**
+Experiments use seeds **0, 1, 2, 3, 4** with the shared graph-input, model-training and validation-selection protocol described in `REPRODUCIBILITY.md`. The 200 primary runs comprise 25 BRACS, 125 BACH, 25 ISIC 2018, and 25 CAMELYON16 model × seed × fold runs.
 
-## Datasets and evaluation protocols
+## Verified frozen data splits
 
-| Dataset | Task and split unit | Verified protocol | Primary runs |
-|---|---|---|---:|
-| **BRACS** | Breast histopathology; whole-slide-image (WSI)-disjoint partitions | **3,155 train / 602 validation / 626 test ROIs** from **193 / 68 / 59 WSIs**, respectively. The controlled `c3` runs use a three-class grouping of the original diagnostic categories. | 25 |
-| **BACH (ICIAR 2018, Part A)** | Four-class breast histology; five-fold cross-validation | **400 images**; test fold sizes **83, 65, 73, 94, 85**. Each image appears in one test fold per seed. | 125 |
-| **ISIC 2018** | Skin-lesion image classification; lesion/group-disjoint split | **7,047 train / 1,468 validation / 1,500 test images**, with no lesion/group overlap across partitions. | 25 |
-| **CAMELYON16-derived patch graphs** | Metastasis-related patch classification; slide-disjoint split | **7,956 train / 1,821 validation / 2,247 test patch graphs**; the test set comes from **3 slide groups**. The verified experiment uses **Level-2** graphs. | 25 |
-| **Total** | | Five model variants; five random seeds, plus five BACH folds | **200** |
+| Dataset | Frozen manifest | Train | Validation | Test | Grouping rule |
+|---|---|---:|---:|---:|---|
+| BRACS | `splits/BRACS/bracs_split.csv` | 3,155 ROIs | 602 ROIs | 626 ROIs | WSI-disjoint |
+| BACH | `splits/BACH/folds.json` | 5-fold CV | next fold | held-out fold | 400 unique images; 145 images with known patient IDs |
+| ISIC 2018 | `splits/ISIC2018/isic2018_lesion_split.csv` | 7,047 | 1,468 | 1,500 | lesion/group-disjoint |
+| CAMELYON16 | `splits/CAMELYON16/split.csv` | 7,956 | 1,821 | 2,247 | slide-group-disjoint, all Level 2 |
 
-**Scope clarification:** BRACS and BACH are the breast-histopathology datasets central to the paper's question. ISIC 2018 and CAMELYON16-derived experiments provide additional controlled evaluations across different image/graph settings; they should not be characterized as proof of cross-domain generalization unless supported by a matched transfer experiment.
+**BACH qualification:** The organizer patient metadata identify 29 patients associated with 145 images; none of these identified patients is distributed across folds. The remaining **255 images do not have verified patient identifiers**, so patient-level independence for the entire dataset cannot be asserted. Fold sizes: 83, 65, 73, 94 and 85.
 
-### BACH patient-metadata limitation
-
-The recovered `folds_info.json` records `grouped_by_patient: true`, **145 images with identified patients**, **29 identified patients**, and **zero identified patients assigned to multiple folds**. Fold-to-prediction comparison also confirmed 400 distinct test images and no duplicate test membership. However, patient identifiers are **not verified for the other 255 images**. Therefore, **patient-level independence for all 400 images has not been established**. This limitation must be retained in the manuscript and any interpretation of the BACH evaluation.
+For CAMELYON16, **do not use an older, different 14,609-patch manifest**. The controlled Level-2 experiment is based on the **12,024-patch** split above.
 
 ## Repository layout
-
-The following is the **intended public release layout**. Some items are optional or may reside in an external archive; do not assume that all paths exist in a newly created repository.
 
 ```text
 SGT_Controlled_Study/
 ├── README.md
-├── SGT/                       # Graph-building, training, evaluation code
-│   ├── core/
-│   ├── tools/
+├── REPRODUCIBILITY.md          # Dataset-specific setup and commands
+├── tools/verify_release.py     # Standard-library preflight and optional prediction-ID audit
+├── run_study.sh                # Entry point for the core training/evaluation launcher
+├── SGT/
+│   ├── core/                   # Graph processing, model, training, inference, tests
+│   │   ├── config/bracs_grapher_7_classes_pna.yml
+│   │   └── data/README.md      # Required reference image: NOT redistributed
+│   ├── run_cgt_bracs.sh
 │   └── environment.yml
-├── splits/                    # Actual, verified experimental partitions
-│   ├── BRACS/bracs_split.csv
-│   ├── BACH/folds.json
-│   ├── BACH/folds_info.json
-│   ├── ISIC2018/isic2018_lesion_split.csv
-│   └── CAMELYON16/split.csv
-├── results/                   # Dataset-level summaries / run metadata, if released
-├── predictions/               # Optional per-run prediction CSVs
-└── checkpoints/               # Optional representative weights or archive links
+├── tools/                      # Schedulers and helper scripts
+├── splits/                     # Five frozen experimental split files
+├── results/                    # Preserved comparison-terminal outputs (not raw predictions)
+├── checkpoints/                # Documentation / legacy supplemental scripts; no weights
+└── source_versions/            # Archived provenance source bundle
 ```
 
-**Important:** An earlier GitHub-style staging ZIP contained *placeholder* split directories. It is not an authoritative source of split membership. Replace those placeholders with the five actual split files from the research server's `SGT_final_4_checkpoints/splits/` before publishing. Keep the candidate/inferred split manifests separate from the verified files.
+## Installation and example execution
 
-## Reproducing the evaluation
-
-### 1. Obtain code and dependencies
+The archived environment, `SGT/environment.yml`, specifies a **legacy Python 3.7 / PyTorch 1.9 / DGL 0.4 software stack**, with CUDA-specific wheels. Modern systems may need a compatible container or manual installation. Do not claim exact reproducibility after substituting dependency versions without validating model outputs.
 
 ```bash
-# After this repository has been created and populated:
-git clone https://github.com/Feya4/SGT_Controlled_Study.git
-cd SGT_Controlled_Study
-
-# If the SGT source tree and environment file have been included:
 conda env create -f SGT/environment.yml
 conda activate cgt
+DATASET=bracs bash run_study.sh check
 ```
 
-The environment configuration in the supplied source archive targets a **legacy Python/PyTorch/DGL software stack**. Installation may require compatible CUDA drivers, platform-specific adjustments, and access to original graph-generation dependencies. Record all deviations from the archived environment. Do not silently replace dependency versions when claiming an exact rerun.
+Once your authorized graphs have been prepared and converted to the expected DGL input structure:
 
-### 2. Obtain the datasets and graph inputs
+```bash
+# Example: three-class BRACS; supply actual graph roots as required by the launcher
+export OUT_MORPH=/path/to/converted/bracs_graphs_with_morphology
+export OUT=/path/to/converted/bracs_graphs
+DATASET=bracs CLASSES=3 MODEL=sgt EPOCHS=100 SEEDS=0 GPU=0 \
+  bash run_study.sh train
 
-Acquire each dataset from its authorized provider and observe its access, citation, privacy, and redistribution terms. Prepare graph inputs using the corresponding preprocessing code and configuration. **Raw medical images and patient metadata are not included in this repository unless their redistribution is explicitly permitted.**
-
-Preserve original image/ROI identifiers during graph construction. Match the generated graph IDs to the split manifest *before* training. The split files encode the **experiment actually evaluated**; regenerating a new split, even with the same seed, is not equivalent to reproducing the original partitions.
-
-### 3. Apply the original partitions
-
-- **BRACS:** `splits/BRACS/bracs_split.csv` uses ROI and slide identifiers, class labels, and `train`/`val`/`test` assignments. Ensure no slide is shared across partitions.
-- **BACH:** `splits/BACH/folds.json` maps image identifiers to folds 0–4. For each test fold *k*, the experimental protocol uses the next fold as validation and the remaining folds for training. Retain the patient-metadata qualification above.
-- **ISIC 2018:** `splits/ISIC2018/isic2018_lesion_split.csv` includes image/lesion grouping and partition assignments. Keep all images in a lesion group within the same partition.
-- **CAMELYON16:** `splits/CAMELYON16/split.csv` identifies Level-2 patch graphs and the slide-group-separated train, validation, and test sets. **Do not substitute an older 14,609-patch candidate split** for the experimentally verified **12,024-patch** manifest.
-
-### 4. Select and evaluate checkpoints correctly
-
-The checkpoint rule for the controlled analysis is **best validation weighted F1**, represented in the run directories by:
-
-```text
-model_best_val_weighted_f1_score.pt
+# The five-fold BACH setup similarly requires BACH_OUT/fold0 ... fold4.
+# ISIC 2018 requires ISIC_OUT; CAMELYON16 requires CAM_OUT.
 ```
 
-Select the checkpoint using **validation data only**, then evaluate it on the held-out test data. Never select an epoch by the highest test F1 and subsequently report that test F1 as an unbiased estimate. Any test-selected checkpoint from exploratory analyses must be identified separately and excluded from the primary validation-selected comparison.
+The training launcher now defaults to **checkpoint selection on validation weighted F1**, and performs held-out test evaluation after training rather than at every epoch. Historical test-selected runs require an **explicit separate diagnostic override** and must not be reported as unbiased primary results.
 
-The representative four-checkpoint package uses the following deterministic choices:
+See **[REPRODUCIBILITY.md](REPRODUCIBILITY.md)** for required input directories, all four datasets' conversion commands, stain-normalization source, model presets, and release limitations.
 
-| Dataset | Representative source run | Saved name in compact package |
-|---|---|---|
-| BRACS | `runs_sgtfull_c3_e100_val_seed0` | `checkpoints/BRACS/best_validation.pt` |
-| BACH | `runs_sgtfull_bach_f0_e100_val_seed0` | `checkpoints/BACH/best_validation.pt` |
-| ISIC 2018 | `runs_sgtfull_isic_e100_val_seed0` | `checkpoints/ISIC2018/best_validation.pt` |
-| CAMELYON16 | `runs_sgtfull_cam_e100_val_seed0` | `checkpoints/CAMELYON16/best_validation.pt` |
+## Checkpoint integrity and reporting
 
-These are **representative seed-0 checkpoints**, with **BACH fold 0** selected as a representative fold; they were **not chosen as the globally highest-scoring seeds**. Loading or evaluating a checkpoint requires the exact graph construction, labels, model flags, and architecture that produced it. A single BACH fold-0 checkpoint does **not** recreate the pooled five-fold evaluation.
+For the controlled study, the trained model is chosen by the highest **validation weighted F1**, saved as `model_best_val_weighted_f1_score.pt`. The published four-checkpoint *representative* selection scheme is: SGT full, seed 0 for BRACS, ISIC 2018 and CAMELYON16; SGT full, fold 0, seed 0 for BACH. These do not replace the 200-run controlled analysis. **Do not claim checkpoints are downloadable from this repository until their weights or an actual verified release link is supplied.**
 
-### 5. Reproduce the multi-run comparisons
+## Transparency and limitations
 
-The primary controlled inventory has five variants × five seeds for BRACS, ISIC 2018, and CAMELYON16, and five variants × five folds × five seeds for BACH: **200 runs** in total. The exported research-server archive additionally detected **10 separate BRACS 200-epoch runs** (`sgtfull` and `sgtconcat`, seeds 0–4); those are **supplementary experiments**, not part of this 200-run inventory. Keep their training budgets and selection protocols distinct.
+- The frozen partitions and controlled variant source files are provided, but original datasets, all preprocessed DGL graphs and the original stain-normalization target image are **not redistributed**.
+- The required target image is present in the owner's original `CGT_sgt2.zip` under `CGT/core/data/target.png`. Its redistribution rights must be confirmed; if authorized, restore the exact image locally or set `SGT_STAIN_TARGET` as documented.
+- Five-seed quantitative results must be regenerated or supported by deposited per-run outputs; the included comparison-terminal logs do not independently establish a full clean rerun.
+- BACH's unidentified patients and CAMELYON16's three slide groups restrict clinical and group-level interpretation.
+- This project is **research software**, not a validated clinical diagnostic product.
 
-For exact reruns, use the dataset-specific scripts under `SGT/` and the configuration recorded in each original run. The source archive includes launchers and supporting files such as `run_cgt_bracs.sh`, `tools/run_bach.sh`, `tools/run_isic.sh`, and `tools/run_camelyon.sh`; consult their help/comments and configure dataset paths before executing. **Commands should not be presented as one-click turnkey reproduction until tested on a clean environment.**
+## Citation and archive status
 
-Report seed-level observations and, when comparing variants, **paired seed/fold differences** with uncertainty intervals. The test set is used for final evaluation, not for selecting models, tuning preprocessing, or deciding which experiments to report. For CAMELYON16, image/patch-level uncertainty must not be confused with independent-slide uncertainty because the test set contains only three slide groups.
+Please cite the manuscript title and all authors above. **Do not invent a journal volume, DOI, publication status or Zenodo accession.** A versioned Zenodo record and citation metadata can be added after the software audit and deposition are complete.
 
-## Verification record
-
-The following checks were performed on the research-server artifacts during preparation of this release:
-
-- **BRACS:** 25 primary prediction files matched the test identifiers of the recovered WSI-disjoint split; no missing, extra, or duplicate IDs were reported.
-- **BACH:** `folds.json` mapped 400 images to five non-overlapping test folds; all five **SGT seed-0** test-prediction files matched the assignments exactly. The additional BACH run files were inventoried, but a fold-by-fold identity check across **all 125 runs** is not documented here.
-- **ISIC 2018:** 25 primary prediction files matched the recovered lesion-disjoint test split; no missing, extra, or duplicate IDs were reported.
-- **CAMELYON16:** 25 primary prediction files matched all **2,247** test graph IDs in the recovered slide-disjoint split; no missing, extra, duplicate, or ground-truth label inconsistencies were reported.
-- **Checkpoints:** 200 primary best-validation checkpoint files were collected into an intermediate **6.4 GB** archive; four selected representative checkpoints plus five split manifests were copied into a separate **131 MB** compact package.
-
-These are **artifact-consistency checks**, not independent verification that every result can be reproduced bit-for-bit from a clean installation. The original training commits, exact selected epochs, data provenance, preprocessing, and final summary statistics require ongoing archival auditing.
-
-## Interpretation and limitations
-
-This work is designed to isolate the effect of morphology and spatial encoding from confounding changes in model capacity and evaluation. A favorable point estimate alone does not establish that a module is useful: interpretation should consider paired uncertainty, variation across seeds and datasets, and the effects of the corresponding permutation and parameter-matched controls. In particular, **non-significant comparisons should not be described as established improvements**.
-
-Further limitations include the incomplete BACH patient-identity mapping, the limited number of independent CAMELYON16 test-slide groups, differences between datasets and classification settings, and the fact that a representative-checkpoint archive cannot substitute for all five seeds or all BACH folds. Statements of generalization beyond the evaluated data and protocols should be appropriately qualified.
-
-## Citation
-
-If you use this code, please cite the associated study once its final bibliographic record is available:
-
-> Akmel, F., Gong, X., Ibrahim, A. O., Alemu, G., Hadabi, A., & Naouri, A. **Do Explicit Morphological and Spatial Encodings Help Graph Transformers in Breast Histopathology? A Controlled Study with SGT.** *Manuscript; journal, year, DOI and bibliographic metadata to be added after publication.*
-
-The original SGT project is available at **https://github.com/Feya4/SGT**. Cite source datasets and upstream software independently as required by their licenses and documentation.
-
-## Availability, licensing, and contact
-
-- **Original SGT repository:** https://github.com/Feya4/SGT.
-- **Reproducibility materials:** Source code, split manifests, run summaries, and representative checkpoints should be identified by versioned release assets or permanent archive links when published. Do not interpret unpopulated paths as already available downloads.
-- **License:** Refer to the actual `LICENSE` file in the published repository; source-code licenses do **not** automatically grant permission to redistribute medical images.
-- **Correspondence:** Xun Gong (contact details to be added after confirmation).
-
----
-
-*Reproducibility principle: preserve the evaluated partitions, choose checkpoints by validation performance, report all prespecified controlled comparisons, and distinguish verified artifacts from still-unreleased materials.*
+The implementation incorporates and modifies CGT and associated graph-processing software; see the source provenance and upstream notices before selecting or modifying licensing terms.
