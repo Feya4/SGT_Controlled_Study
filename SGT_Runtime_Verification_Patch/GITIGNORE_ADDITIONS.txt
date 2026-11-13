@@ -1,4 +1,0 @@
-# add to repository .gitignore
-/tools/runtime_paths.local.sh
-/runtime_verification_logs/
-/environment_runtime_*.txt
