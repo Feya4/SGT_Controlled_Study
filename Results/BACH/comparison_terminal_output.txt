@@ -1,0 +1,185 @@
+(cgt) user@uubntu:/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/core$ ls -d $R/runs_*bach_f*_e100_val_seed* | sed 's/_f[0-9]_.*//' | sort | uniq -c        # runs per model (25 each)
+     25 ../runs_bach
+     25 ../runs_sgtconcat_bach
+     25 ../runs_sgtfull_bach
+     25 ../runs_sgtmshuf_bach
+     25 ../runs_sgtpshuf_bach
+(cgt) user@uubntu:/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/core$ for X in sgtconcat sgtmshuf sgtpshuf cgt; do
+>   P=$([ $X = cgt ] && echo "" || echo "${X}_")
+>   echo "##### SGT - $X (Delta = SGT - control; pooled out-of-fold predictions)"
+>   python compare_runs.py --a "$R/runs_${P}bach_f*_e100_val_seed*" --b "$R/runs_sgtfull_bach_f*_e100_val_seed*" \
+>          --names "$X" SGT --cv --from_preds --perclass
+> done 2>&1 | grep -v -i -E 'warn|deprecated' | tee $R/bach_final.txt
+##### SGT - sgtconcat (Delta = SGT - control; pooled out-of-fold predictions)
+checkpoint rule: best validation weighted F1, test evaluated once
+cross-validation: 5 folds; per seed the out-of-fold test predictions of all folds are pooled (every image scored once)
+scores computed from test_predictions.csv of each run
+sgtconcat = ['../runs_sgtconcat_bach_f*_e100_val_seed*']
+SGT = ['../runs_sgtfull_bach_f*_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | sgtconcat test wF1 sgtconcat test mF1 sgtconcat test acc |       SGT test wF1       SGT test mF1       SGT test acc
+    0 |              59.38              59.38              59.75 |              55.07              55.07              55.75
+    1 |              58.75              58.75              59.50 |              55.74              55.74              56.25
+    2 |              60.74              60.74              61.25 |              53.47              53.47              54.25
+    3 |              59.66              59.66              60.00 |              54.04              54.04              54.50
+    4 |              61.27              61.27              61.75 |              53.92              53.92              54.50
+ mean |              59.96              59.96              60.45 |              54.45              54.45              55.05
+   SD |               1.02               1.02               0.99 |               0.93               0.93               0.89
+
+per fold (mean over the 5 seeds)
+ fold | sgtconcat test wF1 sgtconcat test mF1 sgtconcat test acc |       SGT test wF1       SGT test mF1       SGT test acc
+    0 |              55.35              56.50              56.63 |              48.76              49.64              49.88
+    1 |              55.17              52.66              54.77 |              58.65              55.32              58.77
+    2 |              60.92              58.78              60.55 |              52.53              50.42              52.33
+    3 |              66.41              66.51              67.45 |              57.31              57.58              58.09
+    4 |              60.04              60.81              60.71 |              55.23              56.37              56.24
+ mean |              59.58              59.05              60.02 |              54.49              53.87              55.06
+   SD |               4.63               5.15               4.87 |               3.95               3.60               3.83
+
+seed-paired difference SGT - sgtconcat (percentage points), df = 4
+  test wF1 -5.51  95% CI [-7.85, -3.18]  t(4) = -6.55  p = 0.0028  d_z = -2.93  (0 of 5 seeds better)
+  test mF1 -5.51  95% CI [-7.85, -3.18]  t(4) = -6.55  p = 0.0028  d_z = -2.93  (0 of 5 seeds better)
+  test acc -5.40  95% CI [-7.60, -3.20]  t(4) = -6.81  p = 0.0024  d_z = -3.05  (0 of 5 seeds better)
+
+paired bootstrap over 400 pooled out-of-fold test graphs (10,000 resamples, same resample for all 10 seeds x models)
+  wF1  -5.51  95% CI [-8.33, -2.77]  p = 0.0000
+  mF1  -5.51  95% CI [-8.31, -2.78]  p = 0.0000
+  acc  -5.40  95% CI [-8.15, -2.70]  p = 0.0000
+
+per-class F1 on test_predictions.csv (pooled folds), mean +- SD over 5 seeds
+class      images |       sgtconcat |             SGT |    diff
+normal        100 |  69.73 +-  0.57 |  65.56 +-  1.83 |   -4.17
+benign        100 |  48.49 +-  2.36 |  40.24 +-  2.51 |   -8.25
+in situ       100 |  57.38 +-  2.33 |  54.33 +-  2.12 |   -3.05
+invasive      100 |  64.24 +-  2.50 |  57.66 +-  2.24 |   -6.59
+##### SGT - sgtmshuf (Delta = SGT - control; pooled out-of-fold predictions)
+checkpoint rule: best validation weighted F1, test evaluated once
+cross-validation: 5 folds; per seed the out-of-fold test predictions of all folds are pooled (every image scored once)
+scores computed from test_predictions.csv of each run
+sgtmshuf = ['../runs_sgtmshuf_bach_f*_e100_val_seed*']
+SGT = ['../runs_sgtfull_bach_f*_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | sgtmshuf test wF1 sgtmshuf test mF1 sgtmshuf test acc |      SGT test wF1      SGT test mF1      SGT test acc
+    0 |             62.69             62.69             62.75 |             55.07             55.07             55.75
+    1 |             60.22             60.22             60.75 |             55.74             55.74             56.25
+    2 |             58.20             58.20             59.00 |             53.47             53.47             54.25
+    3 |             59.56             59.56             60.25 |             54.04             54.04             54.50
+    4 |             58.94             58.94             59.75 |             53.92             53.92             54.50
+ mean |             59.92             59.92             60.50 |             54.45             54.45             55.05
+   SD |              1.72              1.72              1.41 |              0.93              0.93              0.89
+
+per fold (mean over the 5 seeds)
+ fold | sgtmshuf test wF1 sgtmshuf test mF1 sgtmshuf test acc |      SGT test wF1      SGT test mF1      SGT test acc
+    0 |             52.12             54.05             53.73 |             48.76             49.64             49.88
+    1 |             59.81             57.06             59.69 |             58.65             55.32             58.77
+    2 |             60.52             58.18             60.00 |             52.53             50.42             52.33
+    3 |             64.21             64.60             65.53 |             57.31             57.58             58.09
+    4 |             62.08             62.68             62.59 |             55.23             56.37             56.24
+ mean |             59.75             59.31             60.31 |             54.49             53.87             55.06
+   SD |              4.59              4.28              4.36 |              3.95              3.60              3.83
+
+seed-paired difference SGT - sgtmshuf (percentage points), df = 4
+  test wF1 -5.48  95% CI [-7.04, -3.92]  t(4) = -9.75  p = 0.0006  d_z = -4.36  (0 of 5 seeds better)
+  test mF1 -5.48  95% CI [-7.04, -3.92]  t(4) = -9.75  p = 0.0006  d_z = -4.36  (0 of 5 seeds better)
+  test acc -5.45  95% CI [-6.68, -4.22]  t(4) = -12.30  p = 0.0003  d_z = -5.50  (0 of 5 seeds better)
+
+paired bootstrap over 400 pooled out-of-fold test graphs (10,000 resamples, same resample for all 10 seeds x models)
+  wF1  -5.48  95% CI [-8.18, -2.71]  p = 0.0000
+  mF1  -5.48  95% CI [-8.21, -2.72]  p = 0.0000
+  acc  -5.45  95% CI [-8.10, -2.75]  p = 0.0000
+
+per-class F1 on test_predictions.csv (pooled folds), mean +- SD over 5 seeds
+class      images |        sgtmshuf |             SGT |    diff
+normal        100 |  70.32 +-  2.08 |  65.56 +-  1.83 |   -4.76
+benign        100 |  46.22 +-  3.77 |  40.24 +-  2.51 |   -5.98
+in situ       100 |  58.17 +-  1.04 |  54.33 +-  2.12 |   -3.84
+invasive      100 |  64.98 +-  3.11 |  57.66 +-  2.24 |   -7.33
+##### SGT - sgtpshuf (Delta = SGT - control; pooled out-of-fold predictions)
+checkpoint rule: best validation weighted F1, test evaluated once
+cross-validation: 5 folds; per seed the out-of-fold test predictions of all folds are pooled (every image scored once)
+scores computed from test_predictions.csv of each run
+sgtpshuf = ['../runs_sgtpshuf_bach_f*_e100_val_seed*']
+SGT = ['../runs_sgtfull_bach_f*_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | sgtpshuf test wF1 sgtpshuf test mF1 sgtpshuf test acc |      SGT test wF1      SGT test mF1      SGT test acc
+    0 |             56.87             56.87             57.25 |             55.07             55.07             55.75
+    1 |             53.82             53.82             54.75 |             55.74             55.74             56.25
+    2 |             56.88             56.88             57.50 |             53.47             53.47             54.25
+    3 |             53.81             53.81             54.50 |             54.04             54.04             54.50
+    4 |             55.20             55.20             55.75 |             53.92             53.92             54.50
+ mean |             55.32             55.32             55.95 |             54.45             54.45             55.05
+   SD |              1.53              1.53              1.39 |              0.93              0.93              0.89
+
+per fold (mean over the 5 seeds)
+ fold | sgtpshuf test wF1 sgtpshuf test mF1 sgtpshuf test acc |      SGT test wF1      SGT test mF1      SGT test acc
+    0 |             48.00             50.08             50.12 |             48.76             49.64             49.88
+    1 |             58.60             54.75             58.46 |             58.65             55.32             58.77
+    2 |             52.07             50.18             52.05 |             52.53             50.42             52.33
+    3 |             61.49             61.92             62.13 |             57.31             57.58             58.09
+    4 |             55.60             56.62             56.24 |             55.23             56.37             56.24
+ mean |             55.15             54.71             55.80 |             54.49             53.87             55.06
+   SD |              5.31              4.94              4.84 |              3.95              3.60              3.83
+
+seed-paired difference SGT - sgtpshuf (percentage points), df = 4
+  test wF1 -0.87  95% CI [-3.39, +1.65]  t(4) = -0.96  p = 0.3928  d_z = -0.43  (2 of 5 seeds better)
+  test mF1 -0.87  95% CI [-3.39, +1.65]  t(4) = -0.96  p = 0.3928  d_z = -0.43  (2 of 5 seeds better)
+  test acc -0.90  95% CI [-3.10, +1.30]  t(4) = -1.14  p = 0.3198  d_z = -0.51  (1 of 5 seeds better)
+
+paired bootstrap over 400 pooled out-of-fold test graphs (10,000 resamples, same resample for all 10 seeds x models)
+  wF1  -0.87  95% CI [-2.61, +0.77]  p = 0.3054
+  mF1  -0.87  95% CI [-2.61, +0.76]  p = 0.3074
+  acc  -0.90  95% CI [-2.65, +0.70]  p = 0.2904
+
+per-class F1 on test_predictions.csv (pooled folds), mean +- SD over 5 seeds
+class      images |        sgtpshuf |             SGT |    diff
+normal        100 |  66.56 +-  1.66 |  65.56 +-  1.83 |   -1.00
+benign        100 |  40.55 +-  3.93 |  40.24 +-  2.51 |   -0.30
+in situ       100 |  55.09 +-  2.97 |  54.33 +-  2.12 |   -0.76
+invasive      100 |  59.06 +-  1.78 |  57.66 +-  2.24 |   -1.41
+##### SGT - cgt (Delta = SGT - control; pooled out-of-fold predictions)
+checkpoint rule: best validation weighted F1, test evaluated once
+cross-validation: 5 folds; per seed the out-of-fold test predictions of all folds are pooled (every image scored once)
+scores computed from test_predictions.csv of each run
+cgt = ['../runs_bach_f*_e100_val_seed*']
+SGT = ['../runs_sgtfull_bach_f*_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | cgt test wF1 cgt test mF1 cgt test acc | SGT test wF1 SGT test mF1 SGT test acc
+    0 |        59.16        59.16        59.50 |        55.07        55.07        55.75
+    1 |        59.80        59.80        60.50 |        55.74        55.74        56.25
+    2 |        57.26        57.26        58.00 |        53.47        53.47        54.25
+    3 |        57.73        57.73        58.00 |        54.04        54.04        54.50
+    4 |        60.90        60.90        61.25 |        53.92        53.92        54.50
+ mean |        58.97        58.97        59.45 |        54.45        54.45        55.05
+   SD |         1.49         1.49         1.46 |         0.93         0.93         0.89
+
+per fold (mean over the 5 seeds)
+ fold | cgt test wF1 cgt test mF1 cgt test acc | SGT test wF1 SGT test mF1 SGT test acc
+    0 |        53.54        54.83        55.18 |        48.76        49.64        49.88
+    1 |        54.81        52.11        55.08 |        58.65        55.32        58.77
+    2 |        60.04        58.10        59.45 |        52.53        50.42        52.33
+    3 |        64.97        64.86        65.53 |        57.31        57.58        58.09
+    4 |        59.82        60.52        60.24 |        55.23        56.37        56.24
+ mean |        58.64        58.08        59.10 |        54.49        53.87        55.06
+   SD |         4.59         4.95         4.31 |         3.95         3.60         3.83
+
+seed-paired difference SGT - cgt (percentage points), df = 4
+  test wF1 -4.52  95% CI [-6.25, -2.80]  t(4) = -7.28  p = 0.0019  d_z = -3.26  (0 of 5 seeds better)
+  test mF1 -4.52  95% CI [-6.25, -2.80]  t(4) = -7.28  p = 0.0019  d_z = -3.26  (0 of 5 seeds better)
+  test acc -4.40  95% CI [-6.07, -2.73]  t(4) = -7.33  p = 0.0018  d_z = -3.28  (0 of 5 seeds better)
+
+paired bootstrap over 400 pooled out-of-fold test graphs (10,000 resamples, same resample for all 10 seeds x models)
+  wF1  -4.52  95% CI [-7.50, -1.58]  p = 0.0020
+  mF1  -4.52  95% CI [-7.48, -1.61]  p = 0.0018
+  acc  -4.40  95% CI [-7.30, -1.50]  p = 0.0018
+
+per-class F1 on test_predictions.csv (pooled folds), mean +- SD over 5 seeds
+class      images |             cgt |             SGT |    diff
+normal        100 |  70.19 +-  1.25 |  65.56 +-  1.83 |   -4.63
+benign        100 |  47.96 +-  1.93 |  40.24 +-  2.51 |   -7.72
+in situ       100 |  55.34 +-  2.50 |  54.33 +-  2.12 |   -1.01
+invasive      100 |  62.38 +-  3.46 |  57.66 +-  2.24 |   -4.73
+(cgt) user@uubntu:/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/core$ 
