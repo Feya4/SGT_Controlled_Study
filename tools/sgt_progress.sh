@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 # Progress of the SGT, control and fine-tuning runs in CGT_sgt2 (read-only).  Install: cp tools/sgt_progress.sh ~/
-cd /workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2 || exit 1
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT/SGT" || exit 1
 echo "=== $(date '+%m-%d %H:%M') | CPU load $(cut -d' ' -f1-3 /proc/loadavg) ($(nproc --all) cores)"
-nvidia-smi --query-gpu=index,memory.used,memory.total,utilization.gpu --format=csv,noheader | sed 's/^/GPU /'
+if command -v nvidia-smi >/dev/null 2>&1; then
+  nvidia-smi --query-gpu=index,memory.used,memory.total,utilization.gpu --format=csv,noheader | sed 's/^/GPU /'
+else
+  echo "nvidia-smi not available"
+fi
 echo "=== running now (logs written in the last 20 minutes)"
 for f in log_sgt_e*_gpu*.txt log_ctl_e*.txt log_ft_*.txt log_c[37]_e*.txt log_bach_e*.txt; do
   [ -f "$f" ] || continue
