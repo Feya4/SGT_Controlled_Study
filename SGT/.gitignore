@@ -1,6 +1,0 @@
-__pycache__/
-*.pyc
-rerun_logs/
-runs_*/
-core/logs/*/
-mlruns/
