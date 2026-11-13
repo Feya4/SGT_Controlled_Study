@@ -13,6 +13,25 @@ from train_utils import parse_device
 
 DEVICE = parse_device()
 
+_LABEL_MAP = None
+
+
+def set_label_map(mapping):
+    """Configure optional original-label to task-label mapping."""
+    global _LABEL_MAP
+    _LABEL_MAP = None if mapping is None else tuple(int(x) for x in mapping)
+
+
+def _map_label(label):
+    label = int(label)
+    if _LABEL_MAP is None:
+        return label
+    if label < 0 or label >= len(_LABEL_MAP):
+        raise ValueError("Label {} is outside the configured map".format(label))
+    return _LABEL_MAP[label]
+
+
+
 
 COLLATE_FN = {
     'DGLGraph': lambda x: dgl.batch(x),
@@ -175,7 +194,7 @@ class BRACSDataset(Dataset):
             tg = set_graph_on_cuda(tg) if torch.cuda.is_available() else tg
             assign_mat = assign_mat.to(DEVICE) if torch.cuda.is_available() else assign_mat
 
-            return cg, tg, assign_mat, label
+            return cg, tg, assign_mat, _map_label(label)
 
         
         elif hasattr(self, 'num_tg'):
@@ -189,7 +208,7 @@ class BRACSDataset(Dataset):
                 tg = tg[0]
                 w = self._load_weight(self.tg_fnames[index])
             tg = set_graph_on_cuda(tg) if torch.cuda.is_available() else tg
-            return tg, w, label
+            return tg, w, _map_label(label)
 
         
         else:
@@ -201,7 +220,7 @@ class BRACSDataset(Dataset):
                 label = label['label'].item()
                 cg = cg[0]
             cg = set_graph_on_cuda(cg) if torch.cuda.is_available() else cg
-            return cg, label
+            return cg, _map_label(label)
 
     def __len__(self):
         """Return the number of samples in the BRACS dataset."""
