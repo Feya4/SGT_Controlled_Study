@@ -1,9 +1,0 @@
-{
- "patient_file": "/workdir1.8t/fei27/CGT/GNNMD/BACH/BACH_data/images/../ICIAR2018_BACH_dataset_micro_patient.xlsx",
- "grouped_by_patient": true,
- "k": 5,
- "seed": 0,
- "images_identified": 145,
- "patients_identified": 29,
- "patients_split_across_folds": 0
-}
