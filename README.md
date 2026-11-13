@@ -110,6 +110,8 @@ See **[REPRODUCIBILITY.md](REPRODUCIBILITY.md)** for required input directories,
 Due to repository file-size constraints, pretrained model checkpoints are distributed separately through Zenodo. The checkpoint archive contains four representative SGT models, one each for BRACS, BACH (fold 0), ISIC 2018, and CAMELYON16. All checkpoints were selected using validation weighted F1 rather than test-set performance.
 
 The complete training configurations and experimental protocols are documented in this repository. The four representative checkpoints do not constitute the full set of models used in the five-seed controlled study.
+ 
+ **Zenodo checkpoint archive: DOI to be added after publication.
 
 
 
