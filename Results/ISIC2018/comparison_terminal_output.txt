@@ -1,0 +1,166 @@
+cgt) user@uubntu:/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2$ cd /workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2
+ sgtconcat sgtmshuf sgtpshuf cgt; do
+    if [ "$m"(cgt) user@uubntu:/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2$ 
+ = "cgt" ]; then
+        A="$PWD/runs_isic_e100_val_seed*"
+    else
+        A="$PWD/runs_${m}_isic_e100_val_seed*"
+    fi
+
+    echo "========== SGT vs(cgt) user@uubntu:/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2$ for m in sgtconco
+>     if [ "$m" = "cgt" ]; then
+>         A="$PWD/runs_isic_e100_val_seed*"
+>     else
+>         A="$PWD/runs_${m}_isic_e100_val_seed*"
+>     fi
+> 
+>     echo "========== SGT vs $m =========="
+> 
+>     python core/compare_runs.py \
+>         --a "$A" \
+>         --b "$PWD/runs_sgtfull_isic_e100_val_seed*" \
+>         --names "$m" SGT \
+>         --from_preds \
+>         --perclass
+> done 2>&1 | tee isic_final_results.txt
+========== SGT vs sgtconcat ==========
+checkpoint rule: best validation weighted F1, test evaluated once
+scores computed from test_predictions.csv of each run
+sgtconcat = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtconcat_isic_e100_val_seed*']
+SGT = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_isic_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | sgtconcat test wF1 sgtconcat test mF1 sgtconcat test acc |       SGT test wF1       SGT test mF1       SGT test acc
+    0 |              79.21              62.39              79.13 |              78.10              57.77              78.27
+    1 |              79.22              58.35              79.60 |              78.32              53.51              79.27
+    2 |              77.54              59.37              77.53 |              77.89              57.80              78.47
+    3 |              78.85              59.26              79.27 |              77.70              55.43              78.00
+    4 |              77.44              57.24              77.00 |              79.17              58.97              79.73
+ mean |              78.45              59.32              78.51 |              78.24              56.70              78.75
+   SD |               0.89               1.91               1.16 |               0.57               2.20               0.73
+
+seed-paired difference SGT - sgtconcat (percentage points), df = 4
+  test wF1 -0.21  95% CI [-1.76, +1.33]  t(4) = -0.38  p = 0.7208  d_z = -0.17  (2 of 5 seeds better)
+  test mF1 -2.62  95% CI [-6.05, +0.80]  t(4) = -2.13  p = 0.1002  d_z = -0.95  (1 of 5 seeds better)
+  test acc +0.24  95% CI [-1.77, +2.25]  t(4) = 0.33  p = 0.7573  d_z = 0.15  (2 of 5 seeds better)
+
+paired bootstrap over 1500 test graphs (10,000 resamples, same resample for all 10 runs)
+  wF1  -0.21  95% CI [-1.12, +0.69]  p = 0.6350
+  mF1  -2.62  95% CI [-5.18, +0.02]  p = 0.0522
+  acc  +0.24  95% CI [-0.67, +1.16]  p = 0.6022
+
+per-class F1 on test_predictions.csv (test set), mean +- SD over 5 seeds
+class      images |       sgtconcat |             SGT |    diff
+MEL           164 |  48.09 +-  3.28 |  45.82 +-  2.86 |   -2.28
+NV           1016 |  89.51 +-  0.86 |  90.03 +-  0.43 |   +0.52
+BCC            75 |  62.51 +-  3.06 |  62.95 +-  1.66 |   +0.43
+AKIEC          49 |  54.49 +-  1.11 |  49.14 +-  2.67 |   -5.35
+BKL           162 |  58.93 +-  1.00 |  58.11 +-  2.98 |   -0.82
+DF             11 |  33.14 +-  8.95 |  22.13 +- 13.88 |  -11.02
+VASC           23 |  68.58 +-  7.53 |  68.71 +-  1.47 |   +0.13
+========== SGT vs sgtmshuf ==========
+checkpoint rule: best validation weighted F1, test evaluated once
+scores computed from test_predictions.csv of each run
+sgtmshuf = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtmshuf_isic_e100_val_seed*']
+SGT = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_isic_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | sgtmshuf test wF1 sgtmshuf test mF1 sgtmshuf test acc |      SGT test wF1      SGT test mF1      SGT test acc
+    0 |             78.74             56.21             80.13 |             78.10             57.77             78.27
+    1 |             78.19             53.12             79.00 |             78.32             53.51             79.27
+    2 |             77.62             56.13             77.73 |             77.89             57.80             78.47
+    3 |             78.24             56.84             78.60 |             77.70             55.43             78.00
+    4 |             76.72             52.90             76.93 |             79.17             58.97             79.73
+ mean |             77.90             55.04             78.48 |             78.24             56.70             78.75
+   SD |              0.77              1.87              1.22 |              0.57              2.20              0.73
+
+seed-paired difference SGT - sgtmshuf (percentage points), df = 4
+  test wF1 +0.34  95% CI [-1.21, +1.89]  t(4) = 0.60  p = 0.5784  d_z = 0.27  (3 of 5 seeds better)
+  test mF1 +1.65  95% CI [-1.77, +5.08]  t(4) = 1.34  p = 0.2513  d_z = 0.60  (4 of 5 seeds better)
+  test acc +0.27  95% CI [-1.88, +2.41]  t(4) = 0.35  p = 0.7474  d_z = 0.15  (3 of 5 seeds better)
+
+paired bootstrap over 1500 test graphs (10,000 resamples, same resample for all 10 runs)
+  wF1  +0.34  95% CI [-0.46, +1.16]  p = 0.4088
+  mF1  +1.65  95% CI [-0.76, +4.05]  p = 0.1880
+  acc  +0.27  95% CI [-0.55, +1.08]  p = 0.5152
+
+per-class F1 on test_predictions.csv (test set), mean +- SD over 5 seeds
+class      images |        sgtmshuf |             SGT |    diff
+MEL           164 |  44.89 +-  2.00 |  45.82 +-  2.86 |   +0.93
+NV           1016 |  89.88 +-  0.72 |  90.03 +-  0.43 |   +0.16
+BCC            75 |  60.81 +-  4.58 |  62.95 +-  1.66 |   +2.14
+AKIEC          49 |  51.38 +-  3.72 |  49.14 +-  2.67 |   -2.24
+BKL           162 |  58.31 +-  1.54 |  58.11 +-  2.98 |   -0.20
+DF             11 |  16.02 +- 10.28 |  22.13 +- 13.88 |   +6.11
+VASC           23 |  64.02 +-  6.14 |  68.71 +-  1.47 |   +4.69
+========== SGT vs sgtpshuf ==========
+checkpoint rule: best validation weighted F1, test evaluated once
+scores computed from test_predictions.csv of each run
+sgtpshuf = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtpshuf_isic_e100_val_seed*']
+SGT = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_isic_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | sgtpshuf test wF1 sgtpshuf test mF1 sgtpshuf test acc |      SGT test wF1      SGT test mF1      SGT test acc
+    0 |             78.65             58.46             78.87 |             78.10             57.77             78.27
+    1 |             79.41             57.91             79.53 |             78.32             53.51             79.27
+    2 |             78.35             56.02             78.27 |             77.89             57.80             78.47
+    3 |             78.67             55.36             79.47 |             77.70             55.43             78.00
+    4 |             78.23             54.25             79.67 |             79.17             58.97             79.73
+ mean |             78.66             56.40             79.16 |             78.24             56.70             78.75
+   SD |              0.46              1.76              0.59 |              0.57              2.20              0.73
+
+seed-paired difference SGT - sgtpshuf (percentage points), df = 4
+  test wF1 -0.43  95% CI [-1.43, +0.58]  t(4) = -1.17  p = 0.3056  d_z = -0.52  (1 of 5 seeds better)
+  test mF1 +0.30  95% CI [-3.86, +4.46]  t(4) = 0.20  p = 0.8531  d_z = 0.09  (3 of 5 seeds better)
+  test acc -0.41  95% CI [-1.24, +0.41]  t(4) = -1.39  p = 0.2373  d_z = -0.62  (2 of 5 seeds better)
+
+paired bootstrap over 1500 test graphs (10,000 resamples, same resample for all 10 runs)
+  wF1  -0.43  95% CI [-1.11, +0.26]  p = 0.2212
+  mF1  +0.30  95% CI [-1.95, +2.61]  p = 0.8254
+  acc  -0.41  95% CI [-1.11, +0.28]  p = 0.2390
+
+per-class F1 on test_predictions.csv (test set), mean +- SD over 5 seeds
+class      images |        sgtpshuf |             SGT |    diff
+MEL           164 |  46.87 +-  2.09 |  45.82 +-  2.86 |   -1.06
+NV           1016 |  90.23 +-  0.70 |  90.03 +-  0.43 |   -0.19
+BCC            75 |  63.51 +-  1.16 |  62.95 +-  1.66 |   -0.56
+AKIEC          49 |  52.04 +-  2.64 |  49.14 +-  2.67 |   -2.91
+BKL           162 |  59.21 +-  2.53 |  58.11 +-  2.98 |   -1.11
+DF             11 |  14.71 +- 10.70 |  22.13 +- 13.88 |   +7.42
+VASC           23 |  68.24 +-  6.33 |  68.71 +-  1.47 |   +0.47
+========== SGT vs cgt ==========
+checkpoint rule: best validation weighted F1, test evaluated once
+scores computed from test_predictions.csv of each run
+cgt = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_isic_e100_val_seed*']
+SGT = ['/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2/runs_sgtfull_isic_e100_val_seed*']
+paired seeds: 0 1 2 3 4
+
+ seed | cgt test wF1 cgt test mF1 cgt test acc | SGT test wF1 SGT test mF1 SGT test acc
+    0 |        77.76        57.56        77.73 |        78.10        57.77        78.27
+    1 |        77.97        59.78        78.47 |        78.32        53.51        79.27
+    2 |        78.40        58.38        79.00 |        77.89        57.80        78.47
+    3 |        78.75        59.08        79.27 |        77.70        55.43        78.00
+    4 |        78.48        59.68        78.40 |        79.17        58.97        79.73
+ mean |        78.27        58.90        78.57 |        78.24        56.70        78.75
+   SD |         0.40         0.93         0.59 |         0.57         2.20         0.73
+
+seed-paired difference SGT - cgt (percentage points), df = 4
+  test wF1 -0.03  95% CI [-0.93, +0.86]  t(4) = -0.11  p = 0.9190  d_z = -0.05  (3 of 5 seeds better)
+  test mF1 -2.20  95% CI [-5.56, +1.16]  t(4) = -1.82  p = 0.1437  d_z = -0.81  (1 of 5 seeds better)
+  test acc +0.17  95% CI [-1.13, +1.48]  t(4) = 0.37  p = 0.7316  d_z = 0.16  (3 of 5 seeds better)
+
+paired bootstrap over 1500 test graphs (10,000 resamples, same resample for all 10 runs)
+  wF1  -0.03  95% CI [-0.98, +0.90]  p = 0.9340
+  mF1  -2.20  95% CI [-4.93, +0.65]  p = 0.1342
+  acc  +0.17  95% CI [-0.75, +1.11]  p = 0.7172
+
+per-class F1 on test_predictions.csv (test set), mean +- SD over 5 seeds
+class      images |             cgt |             SGT |    diff
+MEL           164 |  45.43 +-  2.80 |  45.82 +-  2.86 |   +0.39
+NV           1016 |  89.72 +-  0.61 |  90.03 +-  0.43 |   +0.32
+BCC            75 |  63.17 +-  2.87 |  62.95 +-  1.66 |   -0.22
+AKIEC          49 |  51.51 +-  2.97 |  49.14 +-  2.67 |   -2.38
+BKL           162 |  59.25 +-  3.11 |  58.11 +-  2.98 |   -1.14
+DF             11 |  35.94 +-  7.02 |  22.13 +- 13.88 |  -13.82
+VASC           23 |  67.25 +-  3.37 |  68.71 +-  1.47 |   +1.46
+(cgt) user@uubntu:/workdir1.8t/fei27/CGT/GNNMD/CGT_sgt2$ 
