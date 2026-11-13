@@ -105,9 +105,13 @@ The training launcher now defaults to **checkpoint selection on validation weigh
 
 See **[REPRODUCIBILITY.md](REPRODUCIBILITY.md)** for required input directories, all four datasets' conversion commands, stain-normalization source, model presets, and release limitations.
 
-## Checkpoint integrity and reporting
+### Model checkpoints
 
-For the controlled study, the trained model is chosen by the highest **validation weighted F1**, saved as `model_best_val_weighted_f1_score.pt`. The published four-checkpoint *representative* selection scheme is: SGT full, seed 0 for BRACS, ISIC 2018 and CAMELYON16; SGT full, fold 0, seed 0 for BACH. These do not replace the 200-run controlled analysis. **Do not claim checkpoints are downloadable from this repository until their weights or an actual verified release link is supplied.**
+Due to repository file-size constraints, pretrained model checkpoints are distributed separately through Zenodo. The checkpoint archive contains four representative SGT models, one each for BRACS, BACH (fold 0), ISIC 2018, and CAMELYON16. All checkpoints were selected using validation weighted F1 rather than test-set performance.
+
+The complete training configurations and experimental protocols are documented in this repository. The four representative checkpoints do not constitute the full set of models used in the five-seed controlled study.
+
+
 
 ## Transparency and limitations
 
